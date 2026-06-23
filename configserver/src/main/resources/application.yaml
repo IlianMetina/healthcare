@@ -8,5 +8,5 @@ spring:
     config:
       server:
         git:
-          uri:
+          uri: git@github.com:IlianMetina/healthcare-config.git
           default-label: master
