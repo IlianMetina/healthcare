@@ -19,7 +19,7 @@ public class Notes {
 
     @Id
     private String notesId;
-    private UUID patientId;
+    private String patientId;
     private String remarks;
     private LocalDateTime createdAt;
 

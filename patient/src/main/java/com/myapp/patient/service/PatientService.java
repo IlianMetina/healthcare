@@ -55,6 +55,7 @@ public class PatientService {
         patientResponse.setLastName(createdPatient.getLastName());
         patientResponse.setFirstName(createdPatient.getFirstName());
         patientResponse.setBirthDate(createdPatient.getBirthDate());
+        patientResponse.setPatientId(createdPatient.getPatientId());
 
         return patientResponse;
     }

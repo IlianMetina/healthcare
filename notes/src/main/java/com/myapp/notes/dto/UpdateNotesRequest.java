@@ -12,5 +12,4 @@ public class UpdateNotesRequest {
 
     private UUID patientId;
     private String remarks;
-    private LocalDateTime createdAt;
 }

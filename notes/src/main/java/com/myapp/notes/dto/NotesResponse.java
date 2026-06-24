@@ -10,6 +10,7 @@ import java.util.UUID;
 @Setter
 public class NotesResponse {
 
+    private String notesId;
     private UUID patientId;
     private String remarks;
     private LocalDateTime createdAt;

@@ -8,7 +8,6 @@ import com.myapp.notes.service.NotesService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/notes")
@@ -21,8 +20,13 @@ public class NotesController {
     }
 
     @GetMapping("/{notesId}")
-    public NotesResponse findNotesById(@PathVariable UUID notesId){
+    public NotesResponse findNotesById(@PathVariable String notesId){
         return service.findNotesById(notesId);
+    }
+
+    @GetMapping("/patient/{patientId}")
+    public List<String> findAllNotesByPatientId(@PathVariable String patientId){
+        return service.findAllNotesByPatientId(patientId);
     }
 
     @GetMapping("/all")
@@ -36,12 +40,12 @@ public class NotesController {
     }
 
     @PutMapping("/update/{notesId}")
-    public NotesResponse updateNotes(@PathVariable UUID notesId, @RequestBody UpdateNotesRequest dto){
+    public NotesResponse updateNotes(@PathVariable String notesId, @RequestBody UpdateNotesRequest dto){
         return service.updateNotes(notesId, dto);
     }
 
     @DeleteMapping("/delete/{notesId}")
-    public void deleteNotes(@PathVariable UUID notesId){
+    public void deleteNotes(@PathVariable String notesId){
         service.deleteNotes(notesId);
     }
 }
