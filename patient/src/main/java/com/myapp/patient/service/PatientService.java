@@ -2,7 +2,7 @@ package com.myapp.patient.service;
 
 import com.myapp.patient.dto.CreatePatientRequest;
 import com.myapp.patient.dto.PatientResponse;
-import com.myapp.patient.dto.UpdatePatientRequest;
+import com.myapp.patient.dto.PutUpdatePatientRequest;
 import com.myapp.patient.model.Patient;
 import com.myapp.patient.repository.PatientRepository;
 import org.springframework.stereotype.Service;
@@ -23,12 +23,13 @@ public class PatientService {
         Patient patient = repository.findById(patientId).orElseThrow(() -> new RuntimeException("Patient not found"));
 
         PatientResponse patientResponse = new PatientResponse();
+        patientResponse.setPatientId(patient.getPatientId());
         patientResponse.setBirthDate(patient.getBirthDate());
         patientResponse.setAddress(patient.getAddress());
         patientResponse.setGender(patient.getGender());
-        patientResponse.setPhoneNumber(patientResponse.getPhoneNumber());
+        patientResponse.setPhoneNumber(patient.getPhoneNumber());
         patientResponse.setFirstName(patient.getFirstName());
-        patientResponse.setLastName(patientResponse.getLastName());
+        patientResponse.setLastName(patient.getLastName());
 
         return patientResponse;
     }
@@ -60,7 +61,7 @@ public class PatientService {
         return patientResponse;
     }
 
-    public PatientResponse updatePatient(UUID patientId, UpdatePatientRequest dto){
+    public PatientResponse updatePatient(UUID patientId, PutUpdatePatientRequest dto){
         Patient patientToUpdate = repository.findById(patientId).orElseThrow(() -> new RuntimeException("Patient not found"));
         patientToUpdate.setFirstName(dto.getFirstName());
         patientToUpdate.setLastName(dto.getLastName());
@@ -72,6 +73,7 @@ public class PatientService {
         Patient savedPatient = repository.save(patientToUpdate);
 
         PatientResponse patientResponse = new PatientResponse();
+        patientResponse.setPatientId(savedPatient.getPatientId());
         patientResponse.setFirstName(savedPatient.getFirstName());
         patientResponse.setLastName(savedPatient.getLastName());
         patientResponse.setBirthDate(savedPatient.getBirthDate());

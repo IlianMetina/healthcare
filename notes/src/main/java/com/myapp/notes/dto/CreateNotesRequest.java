@@ -1,5 +1,6 @@
 package com.myapp.notes.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,7 @@ import java.util.UUID;
 @Setter
 public class CreateNotesRequest {
 
+    @NotBlank(message = "L'identifiant du patient doit être fourni")
     private UUID patientId;
     private String remarks;
 }

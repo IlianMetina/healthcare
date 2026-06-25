@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-public class UpdatePatientRequest {
+public class PutUpdatePatientRequest {
 
     @NotBlank(message = "Le prénom est obligatoire")
     private String firstName;
