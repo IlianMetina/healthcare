@@ -1,0 +1,48 @@
+.card-container{
+
+    display: grid;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 
+        0 2px 4px rgba(30, 58, 138, 0.02), 
+        0 8px 24px rgba(30, 58, 138, 0.06);
+    padding: 1em 2em 1em 2em;
+    gap: 1.2em;
+    border-radius: 20px;
+    width: 20%;
+    background-image: linear-gradient(135deg, #e0f2fe 0%, #f8fafc 60%, #e2e8f0 100%);
+
+}
+
+.card-title{
+    font-size: 1.2em;
+}
+
+.indicators-container{
+
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+}
+
+.card-number{
+
+}
+
+.card-percentage{
+
+    border: 1px solid #ccc;
+    color: #74942b;
+    background-color: #d7f19a;
+    padding: 2px 5px 2px 5px;
+    border-radius: 20px;
+
+}
+
+.card-description{
+
+}
+
+.tracker{
+
+}

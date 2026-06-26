@@ -1,0 +1,57 @@
+.grid-menu-container{
+    height: 100%;
+}
+
+.icons-container-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    padding-top: 0.75rem;
+}
+
+.icon-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 2.5rem;
+    color: inherit;
+    text-decoration: none;
+    line-height: 1;
+}
+
+:host{
+    display: block;
+    height: 100%;
+}
+
+.icons-container-nav i {
+    display: block;
+    font-size: clamp(1.4rem, 2.5vw, 1.875rem);
+    border: 1px solid #c7e3fd;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+.icon-link:hover,
+.icon-link:focus-visible {
+    color: #0f172a;
+}
+
+@media (max-width: 768px) {
+    .icons-container-nav {
+        gap: 0.9rem;
+        padding-top: 0.5rem;
+    }
+
+    .icon-link {
+        min-height: 2.25rem;
+    }
+
+    .icons-container-nav i {
+        font-size: clamp(1.25rem, 4vw, 1.5rem);
+    }
+}
