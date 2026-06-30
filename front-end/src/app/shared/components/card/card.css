@@ -1,48 +1,99 @@
-.card-container{
-
+.card-container {
     display: grid;
-    border: 1px solid rgb(255, 255, 255);
-    box-shadow: 
-        0 2px 4px rgba(30, 58, 138, 0.02), 
-        0 8px 24px rgba(30, 58, 138, 0.06);
-    padding: 1em 2em 1em 2em;
-    gap: 1.2em;
+    gap: 1rem;
+    padding: 1.5rem;
     border-radius: 20px;
-    width: 20%;
-    background-image: linear-gradient(135deg, #e0f2fe 0%, #f8fafc 60%, #e2e8f0 100%);
-
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 52%, #e7eef7 100%);
+    box-shadow:
+        0 2px 4px rgba(15, 23, 42, 0.03),
+        0 12px 28px rgba(15, 23, 42, 0.08);
 }
 
-.card-title{
-    font-size: 1.2em;
-}
-
-.indicators-container{
-
+.card-header {
     display: flex;
     align-items: center;
-    gap: 1em;
-
+    gap: 1rem;
 }
 
-.card-number{
-
+.avatar-placeholder {
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+    color: #f8fafc;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.35);
 }
 
-.card-percentage{
-
-    border: 1px solid #ccc;
-    color: #74942b;
-    background-color: #d7f19a;
-    padding: 2px 5px 2px 5px;
-    border-radius: 20px;
-
+.patient-meta {
+    display: grid;
+    gap: 0.2rem;
 }
 
-.card-description{
-
+.card-kicker,
+.card-subtitle,
+.label,
+.card-description {
+    margin: 0;
 }
 
-.tracker{
-
+.card-kicker {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #64748b;
 }
+
+.card-title {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.2;
+    color: #0f172a;
+}
+
+.card-subtitle {
+    font-size: 0.92rem;
+    color: #475569;
+}
+
+.indicators-container {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.label {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.card-number {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: #0f172a;
+}
+
+.card-percentage {
+    margin: 0;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    color: #166534;
+    background-color: #dcfce7;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+

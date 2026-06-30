@@ -1,9 +1,23 @@
 <div class="card-container">
-    <h4 class="card-title">Progress Tracking</h4>
+    <div class="card-header">
+        <div class="avatar-placeholder" aria-hidden="true">
+            <span>{{patientInitials}}</span>
+        </div>
+
+        <div class="patient-meta">
+            <p class="card-kicker">Patient</p>
+            <h4 class="card-title">{{patient.firstName}} {{patient.lastName}}</h4>
+            <p class="card-subtitle">Homme - 24 ans</p>
+        </div>
+    </div>
+
     <div class="indicators-container">
-        <h3 class="card-number">14</h3>
+        <div>
+            <p class="label">Visites</p>
+            <h3 class="card-number">14</h3>
+        </div>
+
         <h4 class="card-percentage">+15%</h4>
     </div>
-    <p class="card-description">Therapy goals achieved over the last 3 months</p>
-    <div class="tracker"></div>
+
 </div>

@@ -3,7 +3,7 @@ import { Card } from '../../shared/components/card/card';
 
 @Component({
   selector: 'app-home',
-  imports: [Card],
+  imports: [],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
