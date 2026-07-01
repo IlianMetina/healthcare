@@ -1,12 +1,13 @@
 package com.myapp.doctor.dto;
 
+import com.myapp.doctor.model.UserRoles;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class UserLoginRequest {
+public class DoctorCreateResponse {
 
     private String email;
-    private String password;
+    private UserRoles role;
 }

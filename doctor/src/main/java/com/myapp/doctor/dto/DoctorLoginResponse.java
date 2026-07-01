@@ -5,10 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserResponse {
+public class DoctorLoginResponse {
 
     private String accessToken;
-    private String tokenType;
-    private Long expiresIn;
     private UserInfoDTO user;
 }

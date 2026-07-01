@@ -1,5 +1,9 @@
 package com.myapp.doctor.service;
 
+import com.myapp.doctor.dto.DoctorCreateRequest;
+import com.myapp.doctor.dto.DoctorCreateResponse;
+import com.myapp.doctor.model.Doctor;
+import com.myapp.doctor.model.UserRoles;
 import com.myapp.doctor.repository.DoctorRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,6 +19,20 @@ public class DoctorService {
         this.repository = repository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
+    }
+
+    public DoctorCreateResponse createDoctor(DoctorCreateRequest dto){
+        Doctor doctor = new Doctor();
+        doctor.setRole(UserRoles.DOCTOR);
+        doctor.setEmail(dto.getEmail());
+        doctor.setHashedPassword(passwordEncoder.encode(dto.getPassword()));
+
+        Doctor newDoctor = repository.save(doctor);
+        DoctorCreateResponse doctorResponse = new DoctorCreateResponse();
+        doctorResponse.setEmail(newDoctor.getEmail());
+        doctorResponse.setRole(newDoctor.getRole());
+
+        return doctorResponse;
     }
 
 

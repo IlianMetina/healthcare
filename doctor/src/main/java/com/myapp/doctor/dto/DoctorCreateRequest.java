@@ -1,16 +1,13 @@
 package com.myapp.doctor.dto;
 
 import com.myapp.doctor.model.UserRoles;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class UserInfoDto {
-    private Long id;
+public class DoctorCreateRequest {
     private String email;
-    @Enumerated(EnumType.STRING)
+    private String password;
     private UserRoles role;
 }
