@@ -4,6 +4,7 @@ import com.myapp.notes.dto.CreateNotesRequest;
 import com.myapp.notes.dto.NotesResponse;
 import com.myapp.notes.dto.UpdateNotesRequest;
 import com.myapp.notes.model.Notes;
+import com.myapp.notes.model.RemarksStatus;
 import com.myapp.notes.repository.NotesRepository;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +33,18 @@ public class NotesService {
         return notesResponse;
     }
 
+    public List<String> findAllRelevantNotesByPatientId(String patientId){
+        List<Notes> patientNotes = repository.findByPatientId(patientId);
+
+        List<String> remarks = new ArrayList<>();
+        for(int i = 0; i < patientNotes.size(); i++){
+            if(patientNotes.get(i).getStatus() == RemarksStatus.ACTIVE){
+                remarks.add(patientNotes.get(i).getRemarks());
+            }
+        }
+        return remarks;
+    }
+
     public List<String> findAllNotesByPatientId(String patientId){
         List<Notes> patientNotes = repository.findByPatientId(patientId);
 
@@ -51,6 +64,7 @@ public class NotesService {
         notes.setCreatedAt(LocalDateTime.now());
         notes.setPatientId(String.valueOf(dto.getPatientId()));
         notes.setRemarks(dto.getRemarks());
+        notes.setStatus(RemarksStatus.ACTIVE);
 
         Notes createdNotes = repository.save(notes);
 
@@ -59,6 +73,21 @@ public class NotesService {
         notesResponse.setPatientId(UUID.fromString(createdNotes.getPatientId()));
         notesResponse.setRemarks(createdNotes.getRemarks());
         notesResponse.setNotesId(createdNotes.getNotesId());
+
+        return notesResponse;
+    }
+
+    public NotesResponse updateNotesStatus(String notesId){
+        Notes notesToUpdate = repository.findById(notesId).orElseThrow(() -> new RuntimeException("Notes not found"));
+        notesToUpdate.setStatus(RemarksStatus.RESOLVED);
+
+        Notes updatedNotes = repository.save(notesToUpdate);
+
+        NotesResponse notesResponse = new NotesResponse();
+
+        notesResponse.setPatientId(UUID.fromString(updatedNotes.getPatientId()));
+        notesResponse.setRemarks(updatedNotes.getRemarks());
+        notesResponse.setCreatedAt(updatedNotes.getCreatedAt());
 
         return notesResponse;
     }

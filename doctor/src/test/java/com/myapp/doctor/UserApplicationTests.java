@@ -1,4 +1,4 @@
-package com.myapp.user;
+package com.myapp.doctor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

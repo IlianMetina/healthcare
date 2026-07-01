@@ -2,7 +2,6 @@ package com.myapp.assessment.service;
 
 import com.myapp.assessment.client.NotesClient;
 import com.myapp.assessment.client.PatientClient;
-import com.myapp.assessment.dto.NotesResponse;
 import com.myapp.assessment.dto.PatientResponse;
 import com.myapp.assessment.enums.RisksTerms;
 import com.myapp.assessment.enums.TriggerTerms;

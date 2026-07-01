@@ -26,6 +26,11 @@ public class PatientController {
         return service.findPatientById(patientId);
     }
 
+    @GetMapping("/{doctorId}")
+    public List<Patient> findAllPatientsByDoctorId(@PathVariable Long doctorId){
+        return service.
+    }
+
     @GetMapping("/all")
     public List<Patient> findAllPatients(){
         return service.findAllPatients();

@@ -1,10 +1,20 @@
 <div class="home-cards-container">
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+    @for(patient of allPatients; track patient.phoneNumber){
+
+        <app-card [patient]="patient" (openDetails)="openPatientDetails($event)"></app-card>
+    }
 </div>
-<div class="home-cards-container">
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-</div>
+
+@if(isModalOpen && selectedPatient){
+    <div class="modal-backdrop" (click)="closeModal()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            <button type="button" class="close-btn" (click)="closeModal()">
+                x
+            </button>
+            <h2>{{selectedPatient.firstName}} {{selectedPatient.lastName}}</h2>
+            <p>{{isMaleOrFemale(selectedPatient.gender)}}</p>
+            <p>Né le {{selectedPatient.birthDate}}</p>
+            <p>Âge : {{getAge(selectedPatient.birthDate)}}</p>
+        </div>
+    </div>
+}

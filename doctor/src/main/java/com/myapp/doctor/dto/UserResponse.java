@@ -1,4 +1,4 @@
-package com.myapp.user.dto;
+package com.myapp.doctor.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,6 @@ import lombok.Setter;
 public class UserResponse {
 
     private String accessToken;
-    private String refreshTOken;
     private String tokenType;
     private Long expiresIn;
     private UserInfoDTO user;

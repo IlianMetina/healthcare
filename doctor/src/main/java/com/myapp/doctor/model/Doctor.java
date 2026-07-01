@@ -1,10 +1,10 @@
-package com.myapp.user.model;
+package com.myapp.doctor.model;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-public class User {
+public class Doctor {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

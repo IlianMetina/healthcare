@@ -1,6 +1,6 @@
-package com.myapp.user.dto;
+package com.myapp.doctor.dto;
 
-import com.myapp.user.model.UserRoles;
+import com.myapp.doctor.model.UserRoles;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.Getter;

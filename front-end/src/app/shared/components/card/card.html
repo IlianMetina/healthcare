@@ -1,4 +1,4 @@
-<div class="card-container">
+<div class="card-container" (click)="onCardClick()">
     <div class="card-header">
         <div class="avatar-placeholder" aria-hidden="true">
             <span>{{patientInitials}}</span>
@@ -7,7 +7,6 @@
         <div class="patient-meta">
             <p class="card-kicker">Patient</p>
             <h4 class="card-title">{{patient.firstName}} {{patient.lastName}}</h4>
-            <p class="card-subtitle">Homme - 24 ans</p>
         </div>
     </div>
 

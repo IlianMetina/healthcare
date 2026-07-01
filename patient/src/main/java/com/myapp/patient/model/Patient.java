@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -27,4 +28,5 @@ public class Patient {
     private String address;
     private String phoneNumber;
     private Long visits;
+    private List<Long> doctorsId;
 }

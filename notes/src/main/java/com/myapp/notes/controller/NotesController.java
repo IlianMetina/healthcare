@@ -24,6 +24,11 @@ public class NotesController {
         return service.findNotesById(notesId);
     }
 
+    @GetMapping("/{patientId}")
+    public List<String> findAllRelevantNotesByPatientId(@PathVariable String patientId){
+        return service.findAllRelevantNotesByPatientId(patientId);
+    }
+
     @GetMapping("/patient/{patientId}")
     public List<String> findAllNotesByPatientId(@PathVariable String patientId){
         return service.findAllNotesByPatientId(patientId);
@@ -42,6 +47,11 @@ public class NotesController {
     @PutMapping("/update/{notesId}")
     public NotesResponse updateNotes(@PathVariable String notesId, @RequestBody UpdateNotesRequest dto){
         return service.updateNotes(notesId, dto);
+    }
+
+    @PatchMapping("/status/{notesId}")
+    public NotesResponse updateNotesStatus(@PathVariable String notesId){
+        return service.updateNotesStatus(notesId);
     }
 
     @DeleteMapping("/delete/{notesId}")

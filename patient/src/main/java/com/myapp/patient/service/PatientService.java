@@ -61,6 +61,7 @@ public class PatientService {
         return patientResponse;
     }
 
+
     public PatientResponse updatePatient(UUID patientId, PutUpdatePatientRequest dto){
         Patient patientToUpdate = repository.findById(patientId).orElseThrow(() -> new RuntimeException("Patient not found"));
         patientToUpdate.setFirstName(dto.getFirstName());
