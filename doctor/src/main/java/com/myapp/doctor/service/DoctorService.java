@@ -22,6 +22,11 @@ public class DoctorService {
     }
 
     public DoctorCreateResponse createDoctor(DoctorCreateRequest dto){
+
+        if(repository.findDoctorByEmail(dto.getEmail()).isPresent()){
+            throw new IllegalArgumentException("Un compte existe déjà pour cet e-mail");
+        }
+
         Doctor doctor = new Doctor();
         doctor.setRole(UserRoles.DOCTOR);
         doctor.setEmail(dto.getEmail());

@@ -12,3 +12,4 @@ management:
 jwt:
   secret: +APy/jgm0ouuw1/WSoUTvsjcTsysxO3GmaFljb++w8=
   expiration: 86400000
+

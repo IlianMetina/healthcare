@@ -4,6 +4,7 @@ import com.myapp.doctor.dto.DoctorCreateRequest;
 import com.myapp.doctor.dto.DoctorCreateResponse;
 import com.myapp.doctor.dto.UserLoginRequest;
 import com.myapp.doctor.dto.DoctorLoginResponse;
+import com.myapp.doctor.service.AuthService;
 import com.myapp.doctor.service.DoctorService;
 import com.myapp.doctor.service.JwtService;
 import jakarta.validation.Valid;
@@ -17,16 +18,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class DoctorController {
 
     private final DoctorService doctorService;
-    private final JwtService jwtService;
+    private final AuthService authService;
 
-    public DoctorController(DoctorService doctorService, JwtService jwtService){
+    public DoctorController(DoctorService doctorService, AuthService authService){
         this.doctorService = doctorService;
-        this.jwtService = jwtService;
+        this.authService = authService;
     }
 
     @PostMapping("/login")
     public DoctorLoginResponse login(@RequestBody UserLoginRequest dto){
-        return jwtService.login(dto);
+        return authService.login(dto);
     }
 
     @PostMapping("/create")

@@ -1,13 +1,10 @@
 package com.myapp.doctor.service;
 
-import com.myapp.doctor.dto.UserInfoDTO;
-import com.myapp.doctor.dto.UserLoginRequest;
-import com.myapp.doctor.dto.DoctorLoginResponse;
 import com.myapp.doctor.model.Doctor;
-import com.myapp.doctor.repository.DoctorRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
@@ -18,32 +15,10 @@ import java.util.Map;
 @Service
 public class JwtService {
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-    private final DoctorRepository repository;
     @Value("${jwt.expiration}")
     private Long jwtExpiration;
-
-    public JwtService(DoctorRepository repository){
-        this.repository = repository;
-    }
-
-    public DoctorLoginResponse login(UserLoginRequest dto){
-        Doctor doctor = repository.findDoctorByEmail(dto.getEmail()).orElseThrow(() -> new RuntimeException("Doctor not found"));
-
-        if(!passwordEncoder.matches(dto.getPassword(), doctor.getHashedPassword())){
-           throw new RuntimeException("Email ou mot de passe incorrect");
-        }
-
-        UserInfoDTO userInfos = new UserInfoDTO();
-        userInfos.setEmail(dto.getEmail());
-        userInfos.setRole(doctor.getRole());
-
-
-        DoctorLoginResponse userResponse = new DoctorLoginResponse();
-
-
-    }
+    @Value("${jwt.secret}")
+    private String jwtSecretKey;
 
     public String generateToken(Doctor doctor){
 
@@ -57,13 +32,18 @@ public class JwtService {
 
         SecretKey key = getSignInKey();
 
-        return "";
+        String token = Jwts.builder()
+                .claims(claims)
+                .subject(subject)
+                .issuedAt(issuedAt)
+                .expiration(expiration)
+                .signWith(key)
+                .compact();
+        return token;
     }
 
     private SecretKey getSignInKey() {
-        byte[] keyBytes = Decoder
+        byte[] keyBytes = Decoders.BASE64.decode(jwtSecretKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
-
-
 }
