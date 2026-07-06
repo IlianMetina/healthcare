@@ -1,57 +1,93 @@
-.grid-menu-container{
-    height: 100%;
-}
-
-.icons-container-nav{
+.main-container{
+    background-color: #0A1F44;
+    color: white;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    gap: clamp(1rem, 2vw, 1.5rem);
-    padding-top: 0.75rem;
 }
 
-.icon-link{
+.website-infos-container{
+    padding: 1em;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 2.5rem;
-    color: inherit;
-    text-decoration: none;
-    line-height: 1;
+    gap: 1em;
+    border-bottom: 1px solid #273b5e;
 }
 
-:host{
-    display: block;
-    height: 100%;
+.logo{
+    width: 50px;
+    height: 50px;
 }
 
-.icons-container-nav i {
-    display: block;
-    font-size: clamp(1.4rem, 2.5vw, 1.875rem);
-    border: 1px solid #c7e3fd;
-    padding: 10px;
+.website-version{
+    color: rgb(124, 119, 119);
+    font-size: 0.8em;
+}
+
+.doctor-avatar{
+    padding: 1em;
+    background-color: rgb(124, 119, 119);
+    width: auto;
     border-radius: 100%;
 }
 
-.icon-link:hover,
-.icon-link:focus-visible {
-    color: #0f172a;
+.current-doctor-infos{
+    padding: 0.8em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    border-bottom: 1px solid #273b5e;
+}
+.doctor-name{
+    font-size: 0.8em;
 }
 
-@media (max-width: 768px) {
-    .icons-container-nav {
-        gap: 0.9rem;
-        padding-top: 0.5rem;
-    }
+.doctor-speciality{
+    color: #0D9488;
+    font-size: 0.7em;
+}
 
-    .icon-link {
-        min-height: 2.25rem;
-    }
+.nav-menu-container{
+    padding: 1em;
+    flex: 1;
+}
 
-    .icons-container-nav i {
-        font-size: clamp(1.25rem, 4vw, 1.5rem);
-    }
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    cursor: pointer;
+    padding: 0.8em;
+    border-radius: 5px;
+    color: #0fac9f;
+    font-size: 0.9em;
+}
+
+.nav-menu:hover{
+    background-color: #0f2955;
+    color: white;
+}
+
+.access-nav-container{
+    border-top: 1px solid #273b5e;
+    display: grid;
+    margin-top: auto;
+    padding: 1em;
+    gap: 0.5em;
+}
+
+.access-nav{
+   display: flex;
+    align-items: center;
+    gap: 1em;
+    cursor: pointer;
+    padding: 0.8em;
+    border-radius: 5px;
+    color: #0fac9f;
+    font-size: 0.9em;
+}
+
+.access-nav:hover{
+    background-color: #0f2955;
+    color: white;
 }

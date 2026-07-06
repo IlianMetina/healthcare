@@ -1,10 +1,18 @@
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Libre Baskerville', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--font-mono);
+
 }
 
 body{
     min-height: 100vh;
     margin: 0;
 }
+

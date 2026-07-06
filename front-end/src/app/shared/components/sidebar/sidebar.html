@@ -1,13 +1,55 @@
-<div class="grid-menu-container">
-    <div class="icons-container-nav">
-        <a class="icon-link" routerLink="/" aria-label="Accueil">
-            <i class="ri-home-6-line"></i>
-        </a>
-        <a class="icon-link" routerLink="/patients" aria-label="Patients">
-            <i class="ri-folder-user-line"></i>
-        </a>
-        <a class="icon-link" routerLink="/login" aria-label="Connexion">
-            <i class="ri-login-circle-line"></i>
-        </a>
+<main class="main-container">
+    <div class="website-infos-container">
+        <img class="logo" src="logo.png"/>
+
+        <div class="website-infos">
+            <div class="website-title">Healthcare</div>
+            <p class="website-version">v1.0.1</p>
+        </div>
     </div>
-</div>
+    <div class="current-doctor-infos">
+        <div class="doctor-avatar">
+            {{username}}
+        </div>
+        <div class="doctor-infos">
+            <div class="doctor-name">Dr. Claire Fontaine</div>
+            <div class="doctor-speciality">Cardiologie</div>
+        </div>
+    </div>
+    <nav class="nav-menu-container">
+        <div class="nav-menu">
+            <i class="ri-dashboard-line"></i>
+            <div>Tableau de bord</div>
+        </div>
+        <div class="nav-menu">
+            <i class="ri-group-line"></i>
+            <div>Patients</div>
+        </div>
+        <div class="nav-menu">
+            <i class="ri-calendar-line"></i>
+            <div>Agenda</div>
+        </div>
+        <div class="nav-menu">
+            <i class="ri-file-text-line"></i>
+            <div>Dossiers médicaux</div>
+        </div>
+        <div class="nav-menu">
+            <i class="ri-capsule-line"></i>
+            <div>Prescriptions</div>
+        </div>
+        <div class="nav-menu">
+            <i class="ri-dossier-line"></i>
+            <div>Rapports</div>
+        </div>
+    </nav>
+    <div class="access-nav-container">
+        <div class="access-nav">
+            <i class="ri-settings-line"></i>
+            <div>Paramètres</div>
+        </div>
+        <div class="access-nav">
+            <i class="ri-logout-circle-r-line"></i>
+            <div>Déconnexion</div>
+        </div>
+    </div>
+</main>

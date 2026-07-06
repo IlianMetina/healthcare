@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Card } from '../../shared/components/card/card';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,4 +10,13 @@ import { Card } from '../../shared/components/card/card';
 })
 export class Home {
 
+  private router = inject(Router);
+
+  redirectToPatients(){
+    this.router.navigate(['patients']);
+  }
+
+  redirectToAbout(){
+    this.router.navigate(['about']);
+  }
 }

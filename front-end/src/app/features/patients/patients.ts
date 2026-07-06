@@ -6,7 +6,7 @@ import { Patient } from '../../core/models/patient';
 
 @Component({
   selector: 'app-patients',
-  imports: [Card],
+  imports: [],
   templateUrl: './patients.html',
   styleUrl: './patients.css',
 })
