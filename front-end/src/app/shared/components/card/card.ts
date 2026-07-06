@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Patient } from '../../../core/models/patient';
+import { Avatar } from '../avatar/avatar';
 
 @Component({
   selector: 'app-card',
-  imports: [],
+  imports: [Avatar],
   templateUrl: './card.html',
   styleUrl: './card.css',
 })

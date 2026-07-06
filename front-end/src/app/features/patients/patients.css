@@ -1,0 +1,14 @@
+.patients-list-container{
+    width: 20%;
+}
+
+.flex-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flex-details div{
+    font-size: 0.9em;
+    color: gray;
+}

@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { Card } from '../../shared/components/card/card';
 import { AuthService } from '../../services/auth/auth-service';
 import { PatientService } from '../../services/patients/patient-service';
 import { Patient } from '../../core/models/patient';
+import { Card } from '../../shared/components/card/card';
 
 @Component({
   selector: 'app-patients',
-  imports: [],
+  imports: [Card],
   templateUrl: './patients.html',
   styleUrl: './patients.css',
 })
@@ -48,9 +48,9 @@ export class Patients {
   private authService = inject(AuthService);
   private patientSerivce = inject(PatientService);
 
-  ngOnInit(): void{
-    this.loadPatients();
-  }
+  // ngOnInit(): void{
+  //   this.loadPatients();
+  // }
 
   getAge(isoDate: string): number{
     const birthDate = new Date(isoDate);
@@ -86,13 +86,13 @@ export class Patients {
     this.selectedPatient = null;
   }
 
-  async loadPatients(){
-    try{
-      this.allPatients = await this.patientSerivce.getAllPatients();
-    }catch(error){
-      console.error("Erreur :", error);
-    }
-  }
+  // async loadPatients(){
+  //   try{
+  //     this.allPatients = await this.patientSerivce.getAllPatients();
+  //   }catch(error){
+  //     console.error("Erreur :", error);
+  //   }
+  // }
 
   
 }

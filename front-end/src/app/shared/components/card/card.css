@@ -1,0 +1,35 @@
+.card-container{
+    display: flex;
+    width: auto;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 0.5em;
+    gap: 10px;
+}
+
+.patient-infos-container{
+    display: grid;
+}
+
+.more-details{
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+    gap: 10px;
+}
+
+.patient-status{
+    padding: 0.4em;
+    background-color: rgb(255, 97, 97);
+    border-radius: 5px;
+    font-size: 0.8em;
+
+}
+
+.symptom-description{
+    font-size: 0.8em;
+}
+
+.patient-room{
+    color: grey;
+}

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Avatar } from '../avatar/avatar';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
+  imports: [Avatar],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })
