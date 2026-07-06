@@ -6,7 +6,6 @@ import com.myapp.doctor.dto.UserLoginRequest;
 import com.myapp.doctor.dto.DoctorLoginResponse;
 import com.myapp.doctor.service.AuthService;
 import com.myapp.doctor.service.DoctorService;
-import com.myapp.doctor.service.JwtService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

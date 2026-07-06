@@ -1,6 +1,8 @@
 package com.myapp.doctor.service;
 
 import com.myapp.doctor.model.Doctor;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -39,11 +41,29 @@ public class JwtService {
                 .expiration(expiration)
                 .signWith(key)
                 .compact();
+
         return token;
     }
 
     private SecretKey getSignInKey() {
         byte[] keyBytes = Decoders.BASE64.decode(jwtSecretKey);
         return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    public boolean isTokenValid(String token){
+        try{
+            extractAllClaims(token);
+            return true;
+        }catch(JwtException | IllegalArgumentException e){
+            return false;
+        }
+    }
+
+    public Claims extractAllClaims(String token){
+        return Jwts.parser()
+                .verifyWith(getSignInKey())
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
     }
 }
