@@ -1,8 +1,16 @@
 :host {
 	display: block;
 	width: 100%;
-    height: 5%;
-    background-color: red;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    background-color: rgb(236, 236, 236);
+    justify-content: space-between;
+    height: auto;
+
 }
 
 p {
@@ -15,10 +23,51 @@ p {
 
 .todays-date{
 
+    font-size: 0.9em;
+    color: grey;
 
 }
 
 .dashboard-title{
 
-    
+    font-size: 1em;
+}
+
+.search-container{
+    display: flex;
+    align-items: center;
+}
+
+.input{
+    padding: 0.5em 0.8em 0.5em 2.2em;
+    border-radius: 5px;
+    border: none;
+}
+
+.add-patient-container{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.search-bar{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon{
+    position: absolute;
+    left: 0.7em;
+    color: grey;
+    pointer-events: none;
+}
+
+#add-patient-btn{
+    padding: 0.6em;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
 }

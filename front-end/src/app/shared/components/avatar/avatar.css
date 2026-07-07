@@ -1,6 +1,9 @@
 .doctor-avatar{
-    padding: 1em;
+    padding: 0.5em;
     background-color: rgb(124, 119, 119);
     width: auto;
     border-radius: 100%;
+    color: white;
+    font-family: var(--font-sans);
+    font-size: 0.9em;
 }

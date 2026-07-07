@@ -1,11 +1,12 @@
 :host{
     display: block;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .layout-wrapper{
     display: flex;
-    min-height: 100vh;
+    height: 100%;
 }
 
 app-sidebar{
@@ -26,5 +27,8 @@ app-header {
 
 .content{
     flex: 1;
+    display: flex;
     min-width: 0;
+    min-height: 0;
+    overflow: hidden;
 }
