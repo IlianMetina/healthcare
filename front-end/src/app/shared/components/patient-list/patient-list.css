@@ -1,0 +1,23 @@
+.app-card-container {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.flex-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 0.9em;
+}
+
+.flex-details div {
+    font-size: 0.9em;
+    color: gray;
+}
+
+.patients-number {
+    padding: 0.5em;
+}

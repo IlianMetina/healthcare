@@ -8,7 +8,7 @@
         Filtrer <i class="ri-arrow-down-s-line"></i>
       </button>
     </div>
-    @for (patient of filteredPatients; track patient.id) {
+    @for (patient of patientsList(); track patient.id) {
       <app-patient-list-item
         [patient]="patient"
         [isSelected]="selectedPatient.id === patient.id"

@@ -1,0 +1,127 @@
+:host {
+    display: grid;
+    width: auto;
+    padding: 1.2em;
+    background-color: #f3f4f6;
+}
+
+.patient-details-container {
+    display: grid;
+    gap: 0.6em;
+    width: auto;
+    align-content: start;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+app-avatar {
+    width: auto;
+    height: 50px;
+    text-align: center;
+}
+
+.patient-details {
+
+    display: grid;
+}
+
+.patient-header {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.details-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.age,
+.room {
+
+    color: grey;
+    font-size: 0.8em;
+}
+
+.age {}
+
+.room {}
+
+.full-name {
+    font-weight: bold;
+}
+
+.status {
+    padding: 0.3em;
+    background-color: #ffcaca;
+    border: 1px solid #ffbaba;
+    color: red;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+.symptom {
+    font-size: 0.9em;
+}
+
+.ordonancy {
+    padding: 0.6em 0.8em 0.6em 0.8em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 0.8em;
+    border: 1px solid #ccc;
+}
+
+.edit-patient {
+    padding: 0.6em 0.8em 0.6em 0.8em;
+    background-color: grey;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.8em;
+    border: none;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.patient-specifications {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8em;
+    padding-top: 0.8em;
+    border-top: 1px solid #e5e7eb;
+}
+
+.specifications {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.group {
+    color: grey;
+    font-size: 0.8em;
+
+
+}
+
+.type {
+    font-size: 0.8em;
+    font-weight: bold;
+
+}
+
+.patient-curves {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    justify-content: space-evenly;
+}

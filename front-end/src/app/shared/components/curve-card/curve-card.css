@@ -1,0 +1,29 @@
+.curve-card-container {
+    display: grid;
+    border: 1px solid #e4e4e4;
+    border-radius: 6px;
+    padding: 2em;
+    gap: 10px;
+    background-color: white;
+}
+
+.flex-curve-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flex-indicators {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.curve-description {
+    font-size: 0.8em;
+    color: gray;
+}
+
+.flex-indicators p {
+    font-size: 0.9em;
+}

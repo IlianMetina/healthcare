@@ -1,0 +1,56 @@
+:host {
+    display: block;
+    padding: 1em;
+    border-left: 1px solid #e5e7eb;
+}
+
+.appointments-sidebar-container {
+    display: grid;
+    gap: 0.6em;
+    align-content: start;
+    height: 100%;
+}
+
+.sidebar-title {
+    margin: 0;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: grey;
+    letter-spacing: 0.05em;
+}
+
+.appointments-details-container {
+    display: flex;
+    gap: 0.6em;
+}
+
+.appointment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    flex: 1;
+}
+
+.details-card {
+    display: grid;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.8em;
+    gap: 3px;
+}
+
+.number-bold {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.details-card i {
+    font-size: 1em;
+    color: grey;
+}
+
+.details-card p {
+    margin: 0;
+    font-size: 0.78em;
+    color: grey;
+}
