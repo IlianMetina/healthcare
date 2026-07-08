@@ -9,5 +9,4 @@ import lombok.Setter;
 public class DoctorCreateRequest {
     private String email;
     private String password;
-    private UserRoles role;
 }

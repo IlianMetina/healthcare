@@ -1,0 +1,16 @@
+<div class="vital-card">
+  <div class="vital-header">
+    <div class="vital-icon-row">
+      <div class="vital-icon-wrapper" [style.backgroundColor]="iconBgColor">
+        <i [class]="icon" [style.color]="color"></i>
+      </div>
+      <span class="vital-label">{{ label }}</span>
+    </div>
+    <i [class]="trendIcon" [style.color]="trendColor" class="trend-icon"></i>
+  </div>
+  <div class="vital-value-row">
+    <span class="vital-value">{{ value }}</span>
+    <span class="vital-unit">{{ unit }}</span>
+  </div>
+  <div class="sparkline" [innerHTML]="sparklinePath"></div>
+</div>

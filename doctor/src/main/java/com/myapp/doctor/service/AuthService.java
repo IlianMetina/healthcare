@@ -24,23 +24,23 @@ public class AuthService {
         this.jwtService = jwtService;
     }
 
-    public DoctorLoginResponse login(UserLoginRequest dto){
+    public String login(UserLoginRequest dto){
         Doctor doctor = repository.findDoctorByEmail(dto.getEmail()).orElseThrow(() -> new RuntimeException("Doctor not found"));
 
         if(!passwordEncoder.matches(dto.getPassword(), doctor.getHashedPassword())){
             throw new BadCredentialsException("Email ou mot de passe incorrect");
         }
 
-        UserInfoDTO userInfos = new UserInfoDTO();
-        userInfos.setEmail(dto.getEmail());
-        userInfos.setRole(doctor.getRole());
+//        UserInfoDTO userInfos = new UserInfoDTO();
+//        userInfos.setEmail(dto.getEmail());
+//        userInfos.setRole(doctor.getRole());
 
         String token = jwtService.generateToken(doctor);
 
-        DoctorLoginResponse response = new DoctorLoginResponse();
-        response.setAccessToken(token);
-        response.setUser(userInfos);
+//        DoctorLoginResponse response = new DoctorLoginResponse();
+//        response.setAccessToken(token);
+//        response.setUser(userInfos);
 
-        return response;
+        return token;
     }
 }

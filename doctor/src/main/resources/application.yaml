@@ -10,5 +10,5 @@ management:
         include: "*"
 
 jwt:
-  secret: +APy/jgm0ouuw1/WSoUTvsjcTsysxO3GmaFljb++w8=
+  secret: +APy/jgm0ouuw1/WSoUTvsjcTsysxO3GmaFljb++w8=vw
   expiration: 86400000

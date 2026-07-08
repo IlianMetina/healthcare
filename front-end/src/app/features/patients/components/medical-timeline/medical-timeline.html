@@ -1,0 +1,31 @@
+<div class="timeline-card">
+  <div class="timeline-header">
+    <h3 class="timeline-title">Historique médical</h3>
+    <button class="timeline-view-all">
+      Voir tout <i class="ri-arrow-right-s-line"></i>
+    </button>
+  </div>
+  <div class="timeline-list">
+    @for (record of records; track record.date + record.label; let i = $index) {
+      <div class="timeline-item">
+        <div class="timeline-line-container">
+          <div class="timeline-dot">
+            <i [class]="getIcon(record.icon)" [style.color]="getIconColor(record.icon)"></i>
+          </div>
+          @if (i < records.length - 1) {
+            <div class="timeline-connector"></div>
+          }
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-content-header">
+            <div>
+              <span class="timeline-type">{{ record.type }}</span>
+              <p class="timeline-label">{{ record.label }}</p>
+            </div>
+            <span class="timeline-date">{{ record.date }}</span>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

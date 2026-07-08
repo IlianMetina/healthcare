@@ -1,0 +1,23 @@
+<button
+  class="list-item"
+  [class.selected]="isSelected"
+  (click)="onSelect()"
+>
+  <div class="avatar">{{ patient.avatar }}</div>
+  <div class="info">
+    <div class="name">{{ patient.name }}</div>
+    <div class="condition">{{ patient.condition }}</div>
+    <div class="meta">
+      <span
+        class="status-badge"
+        [style.backgroundColor]="status.bgColor"
+        [style.color]="status.textColor"
+        [style.borderColor]="status.borderColor"
+      >{{ status.label }}</span>
+      <span class="room">Ch. {{ patient.room }}</span>
+    </div>
+  </div>
+  @if (isSelected) {
+    <i class="ri-arrow-right-s-line chevron"></i>
+  }
+</button>

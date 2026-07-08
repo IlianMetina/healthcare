@@ -1,0 +1,39 @@
+<div class="detail-card">
+  <div class="detail-header">
+    <div class="detail-left">
+      <div class="detail-avatar">{{ patient.avatar }}</div>
+      <div class="detail-info">
+        <h2 class="detail-name">{{ patient.name }}</h2>
+        <div class="detail-meta">
+          <span class="detail-meta-text">{{ patient.age }} ans — né(e) le {{ patient.dob }}</span>
+          <span class="dot">·</span>
+          <span class="detail-meta-text">Chambre {{ patient.room }}</span>
+          <span class="dot">·</span>
+          <span
+            class="status-badge"
+            [style.backgroundColor]="status.bgColor"
+            [style.color]="status.textColor"
+            [style.borderColor]="status.borderColor"
+          >{{ status.label }}</span>
+        </div>
+        <div class="detail-condition">{{ patient.condition }}</div>
+      </div>
+    </div>
+    <div class="detail-actions">
+      <button class="btn-outline">Ordonnance</button>
+      <button class="btn-primary">Modifier dossier</button>
+      <button class="btn-icon">
+        <i class="ri-more-line"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    @for (item of infoItems; track item.label) {
+      <div class="info-item">
+        <div class="info-label">{{ item.label }}</div>
+        <div class="info-value">{{ item.value }}</div>
+      </div>
+    }
+  </div>
+</div>

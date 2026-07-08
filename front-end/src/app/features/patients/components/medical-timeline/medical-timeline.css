@@ -1,0 +1,124 @@
+:host {
+  display: block;
+}
+
+.timeline-card {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.timeline-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
+  font-family: var(--font-serif);
+  margin: 0;
+}
+
+.timeline-view-all {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s ease;
+  font-family: var(--font-sans);
+}
+
+.timeline-view-all:hover {
+  color: var(--foreground);
+}
+
+.timeline-view-all i {
+  font-size: 11px;
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.timeline-line-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+}
+
+.timeline-dot i {
+  font-size: 12px;
+}
+
+.timeline-connector {
+  width: 1px;
+  flex: 1;
+  background-color: var(--border);
+  min-height: 28px;
+}
+
+.timeline-content {
+  padding-bottom: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.timeline-content-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.timeline-type {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 2px;
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+  font-family: var(--font-mono);
+}
+
+.timeline-label {
+  font-size: 14px;
+  color: var(--foreground);
+  margin: 4px 0 0;
+}
+
+.timeline-date {
+  font-size: 11px;
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-family: var(--font-mono);
+}

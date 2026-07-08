@@ -1,0 +1,57 @@
+<!-- Stats -->
+<div class="stats-section">
+  <div class="section-title">Aujourd'hui</div>
+  <div class="stats-grid">
+    @for (stat of stats; track stat.label) {
+      <div class="stat-card">
+        <div class="stat-icon-row">
+          <i [class]="stat.icon" class="stat-icon"></i>
+        </div>
+        <div class="stat-value">{{ stat.value }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- Agenda -->
+<div class="agenda-section">
+  <div class="agenda-header">
+    <div class="section-title">Agenda du jour</div>
+    <button class="agenda-add-btn">+ Ajouter</button>
+  </div>
+  <div class="agenda-list">
+    @for (appt of appointments; track appt.time + appt.name) {
+      <div
+        class="agenda-item"
+        [class.current]="appt.current"
+      >
+        <div class="agenda-indicator">
+          @if (appt.done) {
+            <i class="ri-checkbox-circle-line agenda-done-icon"></i>
+          } @else if (appt.current) {
+            <div class="agenda-current-dot">
+              <div class="agenda-current-inner"></div>
+            </div>
+          } @else {
+            <div class="agenda-pending-dot"></div>
+          }
+        </div>
+        <div class="agenda-content">
+          <div class="agenda-time" [class.time-current]="appt.current">{{ appt.time }}</div>
+          <div class="agenda-name">{{ appt.name }}</div>
+          <div class="agenda-type">{{ appt.type }}</div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- Medication reminder -->
+<div class="reminder-card">
+  <div class="reminder-header">
+    <i class="ri-capsule-line reminder-icon"></i>
+    <span class="reminder-title">Rappel prescription</span>
+  </div>
+  <p class="reminder-text">Marie Dupont — Renouvellement Bisoprolol 5mg à prescrire avant 18h.</p>
+</div>
