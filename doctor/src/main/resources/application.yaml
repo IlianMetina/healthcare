@@ -3,11 +3,17 @@ spring:
     name: user
   config:
     import: optional:configserver:http://localhost:8888
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: +APy/jgm0ouuw1/WSoUTvsjcTsysxO3GmaFljb++w8=vw
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
 
 jwt:
   secret: +APy/jgm0ouuw1/WSoUTvsjcTsysxO3GmaFljb++w8=vw

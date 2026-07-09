@@ -1,1 +1,17 @@
-<p>login works!</p>
+<form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label for="email">Email:</label>
+    <input id="email" type="text" [formControl]="email">
+    @if(email.hasError('required')){
+    <div>Ce champ est obligatoire</div>
+    }
+    <label for="password">Mot de passe:</label>
+    <input id="password" type="password" [formControl]="password">
+    @if(password.hasError('required')){
+    <div>Ce champ est obligatoire</div>
+    }
+    @if(password.hasError('minlength')){
+    <div>Votre mot de passe doit faire 8 caractères minimum</div>
+    }
+
+    <button type="submit">Se connecter</button>
+</form>

@@ -28,5 +28,6 @@ public class Patient {
     private String address;
     private String phoneNumber;
     private Long visits;
+    @ElementCollection
     private List<Long> doctorsId;
 }

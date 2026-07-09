@@ -8,4 +8,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface PatientRepository extends JpaRepository<Patient, UUID> {
+
+    List<Patient> findAllByDoctorsIdContaining(Long doctorId);
 }

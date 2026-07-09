@@ -10,10 +10,7 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -22,13 +19,15 @@ public class DoctorController {
     private final DoctorService doctorService;
     private final AuthService authService;
 
-    public DoctorController(DoctorService doctorService, AuthService authService){
+    public DoctorController(DoctorService doctorService, AuthService authService) {
         this.doctorService = doctorService;
         this.authService = authService;
     }
 
+//    @GetMapping("")
+
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody UserLoginRequest dto, HttpServletResponse response){
+    public ResponseEntity<String> login(@RequestBody UserLoginRequest dto, HttpServletResponse response) {
         String token = authService.login(dto);
 
         Cookie cookie = new Cookie("jwt", token);
@@ -42,12 +41,9 @@ public class DoctorController {
         return ResponseEntity.ok("Successfully connected");
     }
 
-
     @PostMapping("/create")
-    public DoctorCreateResponse createDoctor(@Valid @RequestBody DoctorCreateRequest dto){
+    public DoctorCreateResponse createDoctor(@Valid @RequestBody DoctorCreateRequest dto) {
         return doctorService.createDoctor(dto);
     }
-
-
 
 }

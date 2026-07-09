@@ -8,12 +8,14 @@ import { About } from './features/about/about';
 // import { Register } from './features/auth/register/register';
 
 export const routes: Routes = [
-    {path: "login", component: Login},
-    {path: '', component: Layout, children: [
-        {path: '', component: Home},
-        {path: 'patients', component: Patients},
-        {path: 'notes', component: Notes},
-        {path: 'about', component: About}
-        // {path: "register", component: Register},
-    ]},
+    { path: "login", component: Login },
+    {
+        path: '', component: Layout, children: [
+            { path: '', component: Home },
+            { path: 'patients', component: Patients },
+            { path: 'notes', component: Notes },
+            { path: 'about', component: About }
+            // {path: "register", component: Register},
+        ]
+    },
 ];

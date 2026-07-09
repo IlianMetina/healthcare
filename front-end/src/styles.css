@@ -24,7 +24,7 @@
   /* Sidebar */
   --sidebar: #0A1F44;
   --sidebar-foreground: #e8edf5;
-  --sidebar-border: rgba(255,255,255,0.08);
+  --sidebar-border: rgba(255, 255, 255, 0.08);
   --sidebar-accent: #132b5a;
 
   /* Chart colors */
@@ -65,4 +65,8 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  cursor: pointer;
 }

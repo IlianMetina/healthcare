@@ -38,6 +38,10 @@ public class PatientService {
         return repository.findAll();
     }
 
+    public List<Patient> findAllPatientsByDoctorId(Long doctorId){
+        return repository.findAllByDoctorsIdContaining(doctorId);
+    }
+
     public PatientResponse createPatient(CreatePatientRequest dto){
         Patient patient = new Patient();
         patient.setPhoneNumber(dto.getPhoneNumber());

@@ -6,6 +6,8 @@ import com.myapp.patient.dto.PutUpdatePatientRequest;
 import com.myapp.patient.model.Patient;
 import com.myapp.patient.service.PatientService;
 import jakarta.validation.Valid;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,10 +28,11 @@ public class PatientController {
         return service.findPatientById(patientId);
     }
 
-//    @GetMapping("/{doctorId}")
-//    public List<Patient> findAllPatientsByDoctorId(@PathVariable Long doctorId){
-//        return service.
-//    }
+    @GetMapping("/{doctorId}")
+    public List<Patient> findAllPatientsByDoctorId(@AuthenticationPrincipal Jwt jwt){
+        Long doctorId = ((Number) jwt.getClaim("id")).longValue();
+        return service.findAllPatientsByDoctorId(doctorId);
+    }
 
     @GetMapping("/all")
     public List<Patient> findAllPatients(){
