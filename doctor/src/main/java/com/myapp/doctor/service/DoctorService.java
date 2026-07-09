@@ -15,15 +15,15 @@ public class DoctorService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
 
-    public DoctorService(DoctorRepository repository, PasswordEncoder passwordEncoder, JwtService jwtService){
+    public DoctorService(DoctorRepository repository, PasswordEncoder passwordEncoder, JwtService jwtService) {
         this.repository = repository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
     }
 
-    public DoctorCreateResponse createDoctor(DoctorCreateRequest dto){
+    public DoctorCreateResponse createDoctor(DoctorCreateRequest dto) {
 
-        if(repository.findDoctorByEmail(dto.getEmail()).isPresent()){
+        if (repository.findDoctorByEmail(dto.getEmail()).isPresent()) {
             throw new IllegalArgumentException("Un compte existe déjà pour cet e-mail");
         }
 
@@ -39,7 +39,5 @@ public class DoctorService {
 
         return doctorResponse;
     }
-
-
 
 }

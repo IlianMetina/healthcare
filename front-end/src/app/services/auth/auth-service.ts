@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   connect(data: LoginRequest): Observable<string> {
-    return this.http.post<string>("http://localhost:8084/api/v1/users/login", data);
+    return this.http.post("http://localhost:8084/api/v1/users/login", data, { responseType: 'text' });
   }
 
 }
