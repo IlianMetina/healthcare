@@ -15,7 +15,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-import java.util.List;
 
 @Configuration
 public class SecurityConfig {
@@ -57,6 +56,4 @@ public class SecurityConfig {
 
         return NimbusJwtDecoder.withSecretKey(secretKey).build();
     }
-
-
 }
