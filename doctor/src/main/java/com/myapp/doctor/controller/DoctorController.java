@@ -3,7 +3,6 @@ package com.myapp.doctor.controller;
 import com.myapp.doctor.dto.DoctorCreateRequest;
 import com.myapp.doctor.dto.DoctorCreateResponse;
 import com.myapp.doctor.dto.UserLoginRequest;
-import com.myapp.doctor.dto.DoctorLoginResponse;
 import com.myapp.doctor.service.AuthService;
 import com.myapp.doctor.service.DoctorService;
 import jakarta.servlet.http.Cookie;
@@ -24,7 +23,7 @@ public class DoctorController {
         this.authService = authService;
     }
 
-//    @GetMapping("")
+    // @GetMapping("")
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody UserLoginRequest dto, HttpServletResponse response) {
@@ -38,7 +37,7 @@ public class DoctorController {
 
         response.addCookie(cookie);
 
-        return ResponseEntity.ok("Successfully connected");
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/create")

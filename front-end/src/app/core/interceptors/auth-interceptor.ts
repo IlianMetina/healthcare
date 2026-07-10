@@ -21,7 +21,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     // car la requête est en lecture seule et non modifiable
     const authReq = req.clone({
       setHeaders: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
+
       }
     });
 
