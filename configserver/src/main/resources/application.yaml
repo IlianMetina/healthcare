@@ -10,3 +10,6 @@ spring:
         git:
           uri: git@github.com:IlianMetina/healthcare-config.git
           default-label: master
+#          username: ${GITHUB_USERNAME}
+#          password: ${GITHUB_TOKEN}
+#          Changer URI vers lien repo github HTTPS
