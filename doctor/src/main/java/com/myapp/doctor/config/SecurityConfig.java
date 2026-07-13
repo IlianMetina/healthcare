@@ -38,7 +38,7 @@ public class SecurityConfig {
                 .cors(cors -> cors.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/users/login").permitAll()
-                        .requestMatchers("/api/v1/users/create").permitAll()
+                        .requestMatchers("/api/v1/users/create").permitAll() // a enlever plus tard
                         .anyRequest().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt((Customizer.withDefaults())));
         return http.build();

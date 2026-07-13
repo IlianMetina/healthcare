@@ -5,6 +5,7 @@ import com.myapp.patient.dto.PatientResponse;
 import com.myapp.patient.dto.PutUpdatePatientRequest;
 import com.myapp.patient.model.Patient;
 import com.myapp.patient.repository.PatientRepository;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -42,7 +43,9 @@ public class PatientService {
         return repository.findAllByDoctorsIdContaining(doctorId);
     }
 
-    public PatientResponse createPatient(CreatePatientRequest dto){
+    public PatientResponse createPatient(CreatePatientRequest dto, Jwt jwt){
+        Long doctorId = ((Number) jwt.getClaim("id")).longValue();
+
         Patient patient = new Patient();
         patient.setPhoneNumber(dto.getPhoneNumber());
         patient.setAddress(dto.getAddress());
@@ -50,6 +53,7 @@ public class PatientService {
         patient.setLastName(dto.getLastName());
         patient.setFirstName(dto.getFirstName());
         patient.setBirthDate(dto.getBirthDate());
+        patient.setDoctorsId(List.of(doctorId));
 
 
         Patient createdPatient = repository.save(patient);

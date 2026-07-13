@@ -22,9 +22,9 @@ public class CookieToHeaderFilter implements GlobalFilter, Ordered {
 
         HttpCookie jwtInCookie = request.getCookies().getFirst(COOKIE_NAME);
 
+        System.out.println("[" + java.time.Instant.now() + "] Cookie trouvé : " + (jwtInCookie != null ? jwtInCookie.getValue() : "AUCUN"));
         if(jwtInCookie != null){
             String token = jwtInCookie.getValue();
-
             ServerHttpRequest mutatedRequest = request.mutate()
                     .headers(headers -> headers.set(AUTH_HEADER, BEARER_PREFIX + token))
                     .build();

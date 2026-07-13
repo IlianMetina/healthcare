@@ -7,10 +7,11 @@ import { MedicalTimeline } from './components/medical-timeline/medical-timeline'
 import { RightPanel } from './components/right-panel/right-panel';
 import {AuthService} from '../../services/auth/auth-service';
 import { PatientService } from '../../services/patients/patient-service';
+import {AddPatientModale} from './components/add-patient-modale/add-patient-modale';
 
 @Component({
   selector: 'app-patients',
-  imports: [PatientListItem, PatientDetail, VitalCard, MedicalTimeline, RightPanel],
+  imports: [PatientListItem, PatientDetail, VitalCard, MedicalTimeline, RightPanel, AddPatientModale],
   templateUrl: './patients.html',
   styleUrl: './patients.css',
 })
@@ -19,10 +20,27 @@ export class Patients {
   private authService = inject(AuthService);
   private patientService = inject(PatientService);
   patientsList = signal<Patient[]>([]);
+  isModalOpen = signal(false);
 
-  async ngOnInit(): Promise<void>{
-    this.patientsList.set(await this.patientService.getAllPatients());
-    console.log(this.patientsList);
+  openModal(): void{
+    this.isModalOpen.set(true);
+  }
+
+  closeModal(): void{
+    this.isModalOpen.set(false);
+  }
+
+  afterPatientCreated(): void{
+    //refaire l'appel api pour recharger les patients
+  }
+
+  ngOnInit(): void{
+    this.patientService.getAllPatientsByDoctor().subscribe({
+      next: (patients) => this.patientsList.set(patients),
+      error: (err) => console.error("Erreur :", err)
+    });
+
+    console.log(this.patientsList());
   }
 
   searchQuery = '';

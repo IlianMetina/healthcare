@@ -1,0 +1,2 @@
+Il faut faire la fonctionnalité d'ajout de patients, car le doctorId
+associé à un patient est extrait du token jwt du docteur connecté

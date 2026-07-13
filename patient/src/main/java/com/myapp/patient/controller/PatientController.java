@@ -28,10 +28,14 @@ public class PatientController {
         return service.findPatientById(patientId);
     }
 
-    @GetMapping("/{doctorId}")
+    @GetMapping("/my-patients")
     public List<Patient> findAllPatientsByDoctorId(@AuthenticationPrincipal Jwt jwt){
         Long doctorId = ((Number) jwt.getClaim("id")).longValue();
-        return service.findAllPatientsByDoctorId(doctorId);
+        System.out.println("ID du docteur acutel : " + doctorId);
+        List<Patient> valuesReturned = service.findAllPatientsByDoctorId(doctorId);
+        System.out.println("Valeurs retourées:");
+        System.out.println(valuesReturned);
+        return valuesReturned;
     }
 
     @GetMapping("/all")
@@ -40,8 +44,8 @@ public class PatientController {
     }
 
     @PostMapping("/create")
-    public PatientResponse createPatient(@Valid @RequestBody CreatePatientRequest dto){
-        return service.createPatient(dto);
+    public PatientResponse createPatient(@Valid @RequestBody CreatePatientRequest dto, @AuthenticationPrincipal Jwt jwt){
+        return service.createPatient(dto, jwt);
     }
 
     // Modifier nom variables patient pour indiquer plus clairement que c'est
