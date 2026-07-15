@@ -7,6 +7,7 @@ import { MedicalTimeline } from './components/medical-timeline/medical-timeline'
 import { RightPanel } from './components/right-panel/right-panel';
 import { AuthService } from '../../services/auth/auth-service';
 import { PatientService } from '../../services/patients/patient-service';
+import { NotesService } from '../../services/notes/notes-service';
 
 @Component({
   selector: 'app-patients',
@@ -18,6 +19,7 @@ export class Patients {
 
   private authService = inject(AuthService);
   private patientService = inject(PatientService);
+  private notesService = inject(NotesService);
   patientsList = signal<Patient[]>([]);
   patientAssessment = signal<string>("Inconnu");
 
