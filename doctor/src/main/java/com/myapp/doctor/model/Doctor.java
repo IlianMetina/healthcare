@@ -17,6 +17,8 @@ public class Doctor implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long doctorId;
+    private String firstName;
+    private String lastName;
     private String email;
     private String hashedPassword;
     @Enumerated(EnumType.STRING)

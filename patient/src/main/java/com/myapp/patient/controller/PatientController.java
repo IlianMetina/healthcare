@@ -33,7 +33,7 @@ public class PatientController {
         Long doctorId = ((Number) jwt.getClaim("id")).longValue();
         System.out.println("ID du docteur acutel : " + doctorId);
         List<Patient> valuesReturned = service.findAllPatientsByDoctorId(doctorId);
-        System.out.println("Valeurs retourées:");
+        System.out.println("Valeurs retournées:");
         System.out.println(valuesReturned);
         return valuesReturned;
     }

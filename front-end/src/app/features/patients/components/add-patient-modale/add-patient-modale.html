@@ -40,7 +40,7 @@
           <select id="gender" formControlName="gender">
             <option value="" disabled>Sélectionner</option>
             @for (g of genders; track g) {
-              <option [value]="g">{{ g === 'MALE' ? 'Homme' : 'Femme' }}</option>
+              <option [value]="g">{{ g === 'M' ? 'Homme' : 'Femme' }}</option>
             }
           </select>
           @if (patientForm.get('gender')?.invalid && patientForm.get('gender')?.touched) {

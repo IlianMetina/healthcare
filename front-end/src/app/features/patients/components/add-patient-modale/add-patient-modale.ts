@@ -1,6 +1,6 @@
-import {Component, EventEmitter, inject, Output} from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {PatientService} from '../../../../services/patients/patient-service';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PatientService } from '../../../../services/patients/patient-service';
 
 @Component({
   selector: 'app-add-patient-modale',
@@ -17,7 +17,7 @@ export class AddPatientModale {
   isSubmitting = false;
   errorMessage: string | null = null;
 
-  genders = ['MALE', 'FEMALE'];
+  genders = ['M', 'F'];
 
   patientForm = new FormGroup({
     firstName: new FormControl('', {
@@ -47,10 +47,12 @@ export class AddPatientModale {
   });
 
   onSubmit(): void {
-    if(this.patientForm.invalid){
+    if (this.patientForm.invalid) {
       this.patientForm.markAllAsTouched();
       return;
     }
+
+    console.log(this.patientForm.getRawValue());
 
     this.isSubmitting = true;
     this.errorMessage = null;
@@ -74,7 +76,7 @@ export class AddPatientModale {
   }
 
   onBackdropClick(event: MouseEvent): void {
-    if(event.target == event.currentTarget){
+    if (event.target == event.currentTarget) {
       this.close.emit();
     }
   }

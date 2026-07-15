@@ -2,13 +2,18 @@ package com.myapp.doctor.controller;
 
 import com.myapp.doctor.dto.DoctorCreateRequest;
 import com.myapp.doctor.dto.DoctorCreateResponse;
+import com.myapp.doctor.dto.DoctorResponse;
 import com.myapp.doctor.dto.UserLoginRequest;
+import com.myapp.doctor.model.Doctor;
 import com.myapp.doctor.service.AuthService;
 import com.myapp.doctor.service.DoctorService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -38,6 +43,12 @@ public class DoctorController {
         response.addCookie(cookie);
 
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<DoctorResponse> getMyInfo(@AuthenticationPrincipal Jwt jwt) {
+        String email = jwt.getSubject();
+        return ResponseEntity.ok(doctorService.getMyInfo(email));
     }
 
     @PostMapping("/create")

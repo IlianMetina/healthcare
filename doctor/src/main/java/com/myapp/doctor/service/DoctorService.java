@@ -2,6 +2,7 @@ package com.myapp.doctor.service;
 
 import com.myapp.doctor.dto.DoctorCreateRequest;
 import com.myapp.doctor.dto.DoctorCreateResponse;
+import com.myapp.doctor.dto.DoctorResponse;
 import com.myapp.doctor.model.Doctor;
 import com.myapp.doctor.model.UserRoles;
 import com.myapp.doctor.repository.DoctorRepository;
@@ -19,6 +20,16 @@ public class DoctorService {
         this.repository = repository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
+    }
+
+    public DoctorResponse getMyInfo(String email){
+
+        Doctor doctor = repository.findDoctorByEmail(email).orElseThrow(() -> new RuntimeException("Doctor not found"));
+        DoctorResponse doctorResponse = new DoctorResponse();
+        doctorResponse.setFirstName(doctor.getFirstName());
+        doctorResponse.setLastName(doctor.getLastName());
+
+        return doctorResponse;
     }
 
     public DoctorCreateResponse createDoctor(DoctorCreateRequest dto) {

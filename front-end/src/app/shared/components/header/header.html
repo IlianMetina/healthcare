@@ -10,7 +10,11 @@
                 <input class="input" placeholder="Rechercher un patient" required="" type="text">
             </div>
             <i class="ri-notification-2-line"></i>
-            <button id="add-patient-btn">+ Nouveau patient</button>
+            <button id="add-patient-btn" (click)="openModal()">+ Nouveau patient</button>
         </div>
     </div>
 </header>
+
+@if (isModalOpen()) {
+<app-add-patient-modale (close)="closeModal()" (created)="afterPatientCreated()"></app-add-patient-modale>
+}

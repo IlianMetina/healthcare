@@ -1,17 +1,16 @@
-import {Component, inject, signal, OnInit} from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Patient, StatusConfig, Appointment, MedicalRecord, VitalData } from '../../core/models/patient';
 import { PatientListItem } from './components/patient-list-item/patient-list-item';
 import { PatientDetail } from './components/patient-detail/patient-detail';
 import { VitalCard } from './components/vital-card/vital-card';
 import { MedicalTimeline } from './components/medical-timeline/medical-timeline';
 import { RightPanel } from './components/right-panel/right-panel';
-import {AuthService} from '../../services/auth/auth-service';
+import { AuthService } from '../../services/auth/auth-service';
 import { PatientService } from '../../services/patients/patient-service';
-import {AddPatientModale} from './components/add-patient-modale/add-patient-modale';
 
 @Component({
   selector: 'app-patients',
-  imports: [PatientListItem, PatientDetail, VitalCard, MedicalTimeline, RightPanel, AddPatientModale],
+  imports: [PatientListItem, PatientDetail, VitalCard, MedicalTimeline, RightPanel],
   templateUrl: './patients.html',
   styleUrl: './patients.css',
 })
@@ -20,35 +19,63 @@ export class Patients {
   private authService = inject(AuthService);
   private patientService = inject(PatientService);
   patientsList = signal<Patient[]>([]);
-  isModalOpen = signal(false);
+  patientAssessment = signal<string>("Inconnu");
 
-  openModal(): void{
-    this.isModalOpen.set(true);
+
+  enrichPatient(p: Patient): Patient {
+    const firstName = p.firstName || '';
+    const lastName = p.lastName || '';
+    const name = `${firstName} ${lastName}`.trim();
+    const avatar = `${firstName.charAt(0) || ''}${lastName.charAt(0) || ''}`.toUpperCase();
+
+    let age = 0;
+    let dob = '';
+    if (p.birthDate) {
+      const birthDateObj = new Date(p.birthDate);
+      const ageDifMs = Date.now() - birthDateObj.getTime();
+      const ageDate = new Date(ageDifMs);
+      age = Math.abs(ageDate.getUTCFullYear() - 1970);
+      dob = birthDateObj.toLocaleDateString('fr-FR');
+    }
+
+    return {
+      ...p,
+      name,
+      avatar,
+      age: p.age || age,
+      dob: p.dob || dob,
+      condition: p.condition || 'Non renseigné',
+      room: p.room || 'N/A',
+      status: p.status || 'stable'
+    };
   }
 
-  closeModal(): void{
-    this.isModalOpen.set(false);
-  }
-
-  afterPatientCreated(): void{
-    //refaire l'appel api pour recharger les patients
-  }
-
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.patientService.getAllPatientsByDoctor().subscribe({
-      next: (patients) => this.patientsList.set(patients),
+      next: (patients) => {
+        const enriched = patients.map(p => this.enrichPatient(p));
+        this.patientsList.set(enriched);
+
+        if (enriched.length > 0 && this.selectedPatient === this.allPatients[0]) {
+          this.selectPatient(enriched[0]);
+        }
+      },
       error: (err) => console.error("Erreur :", err)
     });
-
-    console.log(this.patientsList());
   }
 
   searchQuery = '';
 
   statusConfig: Record<string, StatusConfig> = {
+    NONE: { label: 'Aucun risque', bgColor: 'var(--status-stable-bg)', textColor: 'var(--status-stable-text)', borderColor: 'var(--status-stable-border)' },
+    BORDERLINE: { label: 'Risque limité', bgColor: 'var(--status-observation-bg)', textColor: 'var(--status-observation-text)', borderColor: 'var(--status-observation-border)' },
+    IN_DANGER: { label: 'En danger', bgColor: 'var(--status-critical-bg)', textColor: 'var(--status-critical-text)', borderColor: 'var(--status-critical-border)' },
+    EARLY_ONSET: { label: 'Apparition précoce', bgColor: 'var(--status-critical-bg)', textColor: 'var(--status-critical-text)', borderColor: 'var(--status-critical-border)' },
+    // Gardés pour fallback
     critical: { label: 'Critique', bgColor: 'var(--status-critical-bg)', textColor: 'var(--status-critical-text)', borderColor: 'var(--status-critical-border)' },
     stable: { label: 'Stable', bgColor: 'var(--status-stable-bg)', textColor: 'var(--status-stable-text)', borderColor: 'var(--status-stable-border)' },
     observation: { label: 'Observation', bgColor: 'var(--status-observation-bg)', textColor: 'var(--status-observation-text)', borderColor: 'var(--status-observation-border)' },
+    'Chargement...': { label: 'Analyse...', bgColor: '#f3f4f6', textColor: '#6b7280', borderColor: '#d1d5db' }
   };
 
   allPatients: Patient[] = [
@@ -96,6 +123,17 @@ export class Patients {
 
   selectPatient(patient: Patient): void {
     this.selectedPatient = patient;
+    patient.status = 'Chargement...';
+
+    this.patientService.getPatientAssessment(patient.id).subscribe({
+      next: (assessment) => {
+        patient.status = assessment; // NONE, BORDERLINE, etc.
+      },
+      error: (err) => {
+        console.error(err);
+        patient.status = 'stable'; // Fallback
+      }
+    });
   }
 
   onSearchChange(event: Event): void {

@@ -18,6 +18,11 @@ export interface Patient {
   name?: string;
 }
 
+export interface Doctor {
+  firstName: string;
+  lastName: string;
+}
+
 export interface CreatePatientRequest {
   firstName: string;
   lastName: string;

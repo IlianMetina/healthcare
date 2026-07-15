@@ -1,2 +1,5 @@
 Il faut faire la fonctionnalité d'ajout de patients, car le doctorId
 associé à un patient est extrait du token jwt du docteur connecté
+
+Remplacer l'historique médical page patients pour l'affichage des notes ?
+Modifier infos patients
