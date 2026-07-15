@@ -41,6 +41,9 @@ public class NotesController {
 
     @PostMapping("/create")
     public NotesResponse createNotes(@RequestBody CreateNotesRequest dto){
+
+        System.out.println("Notes récupérées :");
+        System.out.println(dto.getRemarks());
         return service.createNotes(dto);
     }
 

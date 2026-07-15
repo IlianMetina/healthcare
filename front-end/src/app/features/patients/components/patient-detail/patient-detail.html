@@ -9,18 +9,14 @@
           <span class="dot">·</span>
           <span class="detail-meta-text">Chambre {{ patient.room }}</span>
           <span class="dot">·</span>
-          <span
-            class="status-badge"
-            [style.backgroundColor]="status.bgColor"
-            [style.color]="status.textColor"
-            [style.borderColor]="status.borderColor"
-          >{{ status.label }}</span>
+          <span class="status-badge" [style.backgroundColor]="status.bgColor" [style.color]="status.textColor"
+            [style.borderColor]="status.borderColor">{{ status.label }}</span>
         </div>
         <div class="detail-condition">{{ patient.condition }}</div>
       </div>
     </div>
     <div class="detail-actions">
-      <button class="btn-outline">Ordonnance</button>
+      <button class="btn-outline" (click)="showNotesModal = true">Ajouter une note</button>
       <button class="btn-primary">Modifier dossier</button>
       <button class="btn-icon">
         <i class="ri-more-line"></i>
@@ -30,10 +26,15 @@
 
   <div class="info-grid">
     @for (item of infoItems; track item.label) {
-      <div class="info-item">
-        <div class="info-label">{{ item.label }}</div>
-        <div class="info-value">{{ item.value }}</div>
-      </div>
+    <div class="info-item">
+      <div class="info-label">{{ item.label }}</div>
+      <div class="info-value">{{ item.value }}</div>
+    </div>
     }
   </div>
 </div>
+
+@if (showNotesModal) {
+<app-add-notes-modal [patientId]="patient.patientId" (close)="showNotesModal = false"
+  (created)="showNotesModal = false; noteCreated.emit()" />
+}

@@ -18,7 +18,7 @@ export class PatientService {
     return this.http.get<Patient[]>(this.patientsUrl + 'my-patients');
   }
 
-  getPatientAssessment(patientId: number): Observable<string> {
+  getPatientAssessment(patientId: string): Observable<string> {
     return this.http.get<string>(this.assessmentUrl + patientId);
   }
 

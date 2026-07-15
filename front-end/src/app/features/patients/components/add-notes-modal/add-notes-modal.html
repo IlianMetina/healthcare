@@ -1,0 +1,35 @@
+<div class="modal-backdrop" (click)="onBackdropClick($event)">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Ajouter des notes</h2>
+      <button type="button" class="close-btn" (click)="onCancel()">&times;</button>
+    </div>
+
+    <form [formGroup]="notesForm" (ngSubmit)="onSubmit()" class="modal-form">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="notes">Notes à ajouter</label>
+          <input id="firstName" type="text" formControlName="notes" />
+          @if (notesForm.get('notes')?.invalid && notesForm.get('notes')?.touched) {
+          <span class="field-error">Required</span>
+          }
+        </div>
+
+        @if (errorMessage) {
+        <p class="form-error">{{ errorMessage }}</p>
+        }
+
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" (click)="onCancel()">Annuler</button>
+          <button type="submit" class="btn-primary" [disabled]="isSubmitting" (click)="onClick()">
+            {{ isSubmitting ? 'Création...' : 'Ajouter la note' }}
+          </button>
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+</div>

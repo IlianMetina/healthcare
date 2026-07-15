@@ -8,37 +8,25 @@
         Filtrer <i class="ri-arrow-down-s-line"></i>
       </button>
     </div>
-    @for (patient of patientsList(); track patient.id) {
-      <app-patient-list-item
-        [patient]="patient"
-        [isSelected]="selectedPatient.id === patient.id"
-        [statusConfig]="statusConfig"
-        (selectPatient)="selectPatient($event)"
-      ></app-patient-list-item>
+    @for (patient of patientsList(); track patient.patientId) {
+    <app-patient-list-item [patient]="patient" [isSelected]="selectedPatient?.patientId === patient.patientId"
+      [statusConfig]="statusConfig" (selectPatient)="selectPatient($event)"></app-patient-list-item>
     }
   </div>
 
   <!-- Center: patient detail -->
   <div class="patient-center">
 
-    <!-- Patient header card -->
-    <app-patient-detail
-      [patient]="selectedPatient"
-      [statusConfig]="statusConfig"
-    ></app-patient-detail>
+    @if (selectedPatient) {
+    <app-patient-detail [patient]="selectedPatient" [statusConfig]="statusConfig"
+      (noteCreated)="selectPatient(selectedPatient)"></app-patient-detail>
+    }
 
     <!-- Vitals grid -->
     <div class="vitals-grid">
       @for (vital of vitals; track vital.label) {
-        <app-vital-card
-          [icon]="vital.icon"
-          [label]="vital.label"
-          [value]="vital.value"
-          [unit]="vital.unit"
-          [trend]="vital.trend"
-          [data]="vital.data"
-          [color]="vital.color"
-        ></app-vital-card>
+      <app-vital-card [icon]="vital.icon" [label]="vital.label" [value]="vital.value" [unit]="vital.unit"
+        [trend]="vital.trend" [data]="vital.data" [color]="vital.color"></app-vital-card>
       }
     </div>
 

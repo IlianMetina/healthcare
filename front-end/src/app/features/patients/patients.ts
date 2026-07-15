@@ -58,7 +58,7 @@ export class Patients {
         const enriched = patients.map(p => this.enrichPatient(p));
         this.patientsList.set(enriched);
 
-        if (enriched.length > 0 && this.selectedPatient === this.allPatients[0]) {
+        if (enriched.length > 0 && !this.selectedPatient) {
           this.selectPatient(enriched[0]);
         }
       },
@@ -80,15 +80,9 @@ export class Patients {
     'Chargement...': { label: 'Analyse...', bgColor: '#f3f4f6', textColor: '#6b7280', borderColor: '#d1d5db' }
   };
 
-  allPatients: Patient[] = [
-    { id: 1, firstName: 'Marie', lastName: 'Dupont', name: 'Marie Dupont', age: 54, dob: '12/03/1970', birthDate: '1970-03-12', gender: 'F', status: 'critical', room: 'B-214', condition: 'Insuffisance cardiaque', avatar: 'MD', phoneNumber: '0612457885', address: '15 Rue de la Paix', visits: 24 },
-    { id: 2, firstName: 'Jean-Pierre', lastName: 'Moreau', name: 'Jean-Pierre Moreau', age: 67, dob: '08/11/1957', birthDate: '1957-11-08', gender: 'M', status: 'stable', room: 'A-108', condition: 'Diabète type 2', avatar: 'JM', phoneNumber: '0612457886', address: '42 Avenue Victor Hugo', visits: 18 },
-    { id: 3, firstName: 'Isabelle', lastName: 'Laurent', name: 'Isabelle Laurent', age: 41, dob: '22/06/1983', birthDate: '1983-06-22', gender: 'F', status: 'observation', room: 'C-302', condition: 'Hypertension', avatar: 'IL', phoneNumber: '0612457887', address: '8 Boulevard Haussmann', visits: 7 },
-    { id: 4, firstName: 'Thomas', lastName: 'Bernard', name: 'Thomas Bernard', age: 29, dob: '05/09/1995', birthDate: '1995-09-05', gender: 'M', status: 'stable', room: 'A-115', condition: 'Fracture tibia', avatar: 'TB', phoneNumber: '0612457888', address: '23 Rue du Commerce', visits: 3 },
-    { id: 5, firstName: 'Françoise', lastName: 'Petit', name: 'Françoise Petit', age: 72, dob: '30/01/1952', birthDate: '1952-01-30', gender: 'F', status: 'stable', room: 'B-207', condition: 'Arthrite rhumatoïde', avatar: 'FP', phoneNumber: '0612457889', address: '5 Place de la République', visits: 31 },
-  ];
 
-  selectedPatient: Patient = this.allPatients[0];
+
+  selectedPatient: Patient | null = null;
 
   appointments: Appointment[] = [
     { time: '08:30', name: 'Marie Dupont', type: 'Suivi cardiologie', done: true },
@@ -115,9 +109,10 @@ export class Patients {
   ];
 
   get filteredPatients(): Patient[] {
-    if (!this.searchQuery.trim()) return this.allPatients;
+    const patients = this.patientsList();
+    if (!this.searchQuery.trim()) return patients;
     const q = this.searchQuery.toLowerCase();
-    return this.allPatients.filter(p =>
+    return patients.filter(p =>
       (p.name || '').toLowerCase().includes(q) ||
       (p.condition || '').toLowerCase().includes(q)
     );
@@ -127,13 +122,13 @@ export class Patients {
     this.selectedPatient = patient;
     patient.status = 'Chargement...';
 
-    this.patientService.getPatientAssessment(patient.id).subscribe({
+    this.patientService.getPatientAssessment(patient.patientId).subscribe({
       next: (assessment) => {
-        patient.status = assessment; // NONE, BORDERLINE, etc.
+        patient.status = assessment;
       },
       error: (err) => {
         console.error(err);
-        patient.status = 'stable'; // Fallback
+        patient.status = 'stable';
       }
     });
   }

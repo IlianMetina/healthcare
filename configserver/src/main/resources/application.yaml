@@ -8,8 +8,9 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:IlianMetina/healthcare-config.git
+#          uri: git@github.com:IlianMetina/healthcare-config.git
+          uri: https://github.com/IlianMetina/healthcare-config.git
           default-label: master
-#          username: ${GITHUB_USERNAME}
-#          password: ${GITHUB_TOKEN}
-#          Changer URI vers lien repo github HTTPS
+          username: ${GIT_USERNAME}
+          password: ${GIT_TOKEN}
+#          Changer URI vers lien repo github HTTPS/SSH

@@ -9,9 +9,9 @@ import { Doctor } from '../../core/models/patient';
 export class DoctorService {
 
   private http = inject(HttpClient);
-  private doctorUrl = "http://localhost:8072/api/v1/doctor/"
+  private doctorUrl = "http://localhost:8072/api/v1/users/"
 
   getMyInfo(): Observable<Doctor> {
-    return this.http.get<Doctor>(this.doctorUrl + "my-info");
+    return this.http.get<Doctor>(this.doctorUrl + "me");
   }
 }

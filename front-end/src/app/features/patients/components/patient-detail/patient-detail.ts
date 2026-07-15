@@ -1,15 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { AddNotesModal } from '../add-notes-modal/add-notes-modal';
 import { Patient, StatusConfig } from '../../../../core/models/patient';
 
 @Component({
   selector: 'app-patient-detail',
-  imports: [],
+  imports: [AddNotesModal],
   templateUrl: './patient-detail.html',
   styleUrl: './patient-detail.css',
 })
 export class PatientDetail {
   @Input() patient!: Patient;
   @Input() statusConfig!: Record<string, StatusConfig>;
+  @Output() noteCreated = new EventEmitter<void>();
+
+  showNotesModal = false;
 
   infoItems = [
     { label: 'Groupe sanguin', value: 'A+' },
