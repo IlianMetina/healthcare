@@ -1,6 +1,7 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { MedicalRecord, NotesResponse, PatientNotes } from '../../../../core/models/patient';
 import { NotesService } from '../../../../services/notes/notes-service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-medical-timeline',
@@ -11,9 +12,10 @@ import { NotesService } from '../../../../services/notes/notes-service';
 export class MedicalTimeline {
   @Input() records: MedicalRecord[] = [];
   @Input() patientNotes: NotesResponse[] = [];
-  private notesService = inject(NotesService);
-
   @Output() noteDeleted = new EventEmitter();
+
+  private notesService = inject(NotesService);
+  private datePipe = inject(DatePipe);
 
   iconMap: Record<string, string> = {
     pill: 'ri-capsule-line',
@@ -42,5 +44,9 @@ export class MedicalTimeline {
         console.error(err);
       }
     });
+  }
+
+  formatDate(dateString: string): string | null {
+    return this.datePipe.transform(dateString, 'dd MMM yyyy');
   }
 }

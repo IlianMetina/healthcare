@@ -84,9 +84,9 @@ export class Patients {
   };
 
   refreshNotes(): void {
-    if (!this.selectPatient) return;
+    if (!this.selectedPatient) return;
 
-    this.notesService.getPatientNotes(this.selectPatient.patientId)
+    this.notesService.getPatientNotes(this.selectedPatient.patientId)
   }
 
   selectedPatient: Patient | null = null;

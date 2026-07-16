@@ -13,13 +13,8 @@ export class Avatar {
 
 
   get getInitials(): string {
-    if (this.firstName != "Utilisateur") {
-      const firstInitial = this.firstName[0];
-      const secondInitial = this.lastName[0];
-      const initials = firstInitial + secondInitial;
-      return initials;
-    }
-
-    return "IU";
+    const first = this.firstName?.charAt(0)?.toUpperCase() || 'I';
+    const last = this.lastName?.charAt(0)?.toUpperCase() || 'U';
+    return first + last;
   }
 }

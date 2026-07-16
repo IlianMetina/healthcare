@@ -21,6 +21,7 @@
         <div>
           <p class="timeline-label">{{ note.remarks }}</p>
         </div>
+        <div>{{formatDate(note.createdAt)}}</div>
         <button id="delete-note" (click)="deleteNote(note.notesId)">x</button>
       </div>
     </div>
