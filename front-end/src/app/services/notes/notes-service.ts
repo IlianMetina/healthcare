@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { NotesResponse } from '../../core/models/patient';
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +11,8 @@ export class NotesService {
   private http = inject(HttpClient);
   private notesUrl = "http://localhost:8072/api/v1/notes/";
 
-  getPatientNotes(patientId: string): Observable<string[]> {
-    return this.http.get<string[]>(this.notesUrl + "patient/" + patientId);
+  getPatientNotes(patientId: string): Observable<NotesResponse[]> {
+    return this.http.get<NotesResponse[]>(this.notesUrl + "patient/" + patientId);
   }
 
   addPatientNote(patientId: string, data: string): Observable<string> {
@@ -22,7 +23,7 @@ export class NotesService {
     return this.http.post<string>(this.notesUrl + "create", body);
   }
 
-  deleteNote(notesId: string): void {
-    this.http.post<void>(this.notesUrl + "delete/" + notesId, {}, { withCredentials: true });
+  deleteNote(notesId: string): Observable<void> {
+    return this.http.delete<void>(this.notesUrl + "delete/" + notesId, { withCredentials: true });
   }
 }

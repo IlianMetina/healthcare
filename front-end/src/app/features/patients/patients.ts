@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { Patient, StatusConfig, Appointment, MedicalRecord, VitalData } from '../../core/models/patient';
+import { Patient, StatusConfig, Appointment, MedicalRecord, VitalData, NotesResponse } from '../../core/models/patient';
 import { PatientListItem } from './components/patient-list-item/patient-list-item';
 import { PatientDetail } from './components/patient-detail/patient-detail';
 import { VitalCard } from './components/vital-card/vital-card';
@@ -20,11 +20,10 @@ export class Patients {
   private authService = inject(AuthService);
   private patientService = inject(PatientService);
   private notesService = inject(NotesService);
-  patientNotes = signal<string[]>(["Aucune note"]);
+  patientNotes = signal<NotesResponse[]>([]);
   patientsCount = signal<number>(0);
   patientsList = signal<Patient[]>([]);
   patientAssessment = signal<string>("Inconnu");
-
 
   enrichPatient(p: Patient): Patient {
     const firstName = p.firstName || '';
@@ -84,7 +83,11 @@ export class Patients {
     'Chargement...': { label: 'Analyse...', bgColor: '#f3f4f6', textColor: '#6b7280', borderColor: '#d1d5db' }
   };
 
+  refreshNotes(): void {
+    if (!this.selectPatient) return;
 
+    this.notesService.getPatientNotes(this.selectPatient.patientId)
+  }
 
   selectedPatient: Patient | null = null;
 

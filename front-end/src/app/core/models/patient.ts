@@ -22,6 +22,13 @@ export interface PatientNotes {
   remarks: string;
 }
 
+export interface NotesResponse {
+  notesId: string;
+  patientId: string;
+  remarks: string;
+  createdAt: string;
+}
+
 export interface Doctor {
   firstName: string;
   lastName: string;

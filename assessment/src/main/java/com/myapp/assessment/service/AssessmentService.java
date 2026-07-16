@@ -2,6 +2,7 @@ package com.myapp.assessment.service;
 
 import com.myapp.assessment.client.NotesClient;
 import com.myapp.assessment.client.PatientClient;
+import com.myapp.assessment.dto.NotesResponse;
 import com.myapp.assessment.dto.PatientResponse;
 import com.myapp.assessment.enums.RisksTerms;
 import com.myapp.assessment.enums.TriggerTerms;
@@ -25,7 +26,7 @@ public class AssessmentService {
     public RisksTerms calculateRisks(String patientId){
 
         PatientResponse patient = patientClient.findPatientById(patientId);
-        List<String> notes = notesClient.findAllNotesByPatientId(patientId);
+        List<NotesResponse> notes = notesClient.findAllNotesByPatientId(patientId);
 
         int patientAge = Period.between(patient.getBirthDate(), LocalDate.now()).getYears();
         TriggerTerms[] terms = TriggerTerms.values();
@@ -33,7 +34,7 @@ public class AssessmentService {
         int count = 0;
         for(int i = 0; i < terms.length; i++){
             for(int j = 0; j < notes.size(); j++){
-                if(notes.get(j).toLowerCase().contains(terms[i].getTerms().toLowerCase())){
+                if(notes.get(j).getRemarks().toLowerCase().contains(terms[i].getTerms().toLowerCase())){
                     count++;
                     break;
                 }

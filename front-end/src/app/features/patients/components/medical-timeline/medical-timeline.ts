@@ -1,5 +1,5 @@
-import { Component, inject, Input } from '@angular/core';
-import { MedicalRecord, PatientNotes } from '../../../../core/models/patient';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { MedicalRecord, NotesResponse, PatientNotes } from '../../../../core/models/patient';
 import { NotesService } from '../../../../services/notes/notes-service';
 
 @Component({
@@ -10,8 +10,10 @@ import { NotesService } from '../../../../services/notes/notes-service';
 })
 export class MedicalTimeline {
   @Input() records: MedicalRecord[] = [];
-  @Input() patientNotes: string[] = [];
+  @Input() patientNotes: NotesResponse[] = [];
   private notesService = inject(NotesService);
+
+  @Output() noteDeleted = new EventEmitter();
 
   iconMap: Record<string, string> = {
     pill: 'ri-capsule-line',
@@ -31,7 +33,14 @@ export class MedicalTimeline {
     return '#6b7a96';
   }
 
-  deleteNote() {
-
+  deleteNote(notesId: string): void {
+    this.notesService.deleteNote(notesId).subscribe({
+      next: () => {
+        console.log("Note successfully deleted");
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 }

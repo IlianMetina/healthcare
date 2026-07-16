@@ -19,9 +19,9 @@
     <div class="timeline-content">
       <div class="timeline-content-header">
         <div>
-          <p class="timeline-label">{{ note }}</p>
+          <p class="timeline-label">{{ note.remarks }}</p>
         </div>
-        <button id="delete-note" (click)="deleteNote()">x</button>
+        <button id="delete-note" (click)="deleteNote(note.notesId)">x</button>
       </div>
     </div>
   </div>

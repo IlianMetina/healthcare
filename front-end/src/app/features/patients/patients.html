@@ -31,7 +31,8 @@
     </div>
 
     <!-- Medical records timeline -->
-    <app-medical-timeline [patientNotes]="patientNotes()" [records]="records"></app-medical-timeline>
+    <app-medical-timeline [patientNotes]="patientNotes()" [records]="records"
+      (noteDeleted)="refreshNotes()"></app-medical-timeline>
 
   </div>
 
