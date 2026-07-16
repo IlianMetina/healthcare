@@ -122,3 +122,8 @@
   margin-top: 2px;
   font-family: var(--font-mono);
 }
+
+#delete-note {
+  border: none;
+  color: red;
+}

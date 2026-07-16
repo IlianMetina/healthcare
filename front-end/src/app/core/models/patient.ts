@@ -18,6 +18,10 @@ export interface Patient {
   name?: string;
 }
 
+export interface PatientNotes {
+  remarks: string;
+}
+
 export interface Doctor {
   firstName: string;
   lastName: string;
@@ -66,6 +70,6 @@ export interface VitalData {
 
 export interface DayStat {
   label: string;
-  value: string;
+  value: number;
   icon: string;
 }

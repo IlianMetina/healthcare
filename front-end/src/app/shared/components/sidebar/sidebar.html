@@ -1,6 +1,6 @@
 <main class="main-container">
     <div class="website-infos-container">
-        <img class="logo" src="logo.png"/>
+        <img class="logo" src="logo.png" />
 
         <div class="website-infos">
             <div class="website-title">Healthcare</div>
@@ -8,46 +8,62 @@
         </div>
     </div>
     <div class="current-doctor-infos">
-        <app-avatar></app-avatar>
+        <app-avatar [firstName]="firstName()" [lastName]="lastName()"></app-avatar>
         <div class="doctor-infos">
-            <div class="doctor-name">Dr. Claire Fontaine</div>
+            <div class="doctor-name">Dr. {{firstName() + ' ' + lastName()}}</div>
             <div class="doctor-speciality">Cardiologie</div>
         </div>
     </div>
     <nav class="nav-menu-container">
         <div class="nav-menu">
             <i class="ri-dashboard-line"></i>
-            <a routerLink="/"><div>Tableau de bord</div></a>
+            <a routerLink="/">
+                <div>Tableau de bord</div>
+            </a>
         </div>
         <div class="nav-menu">
             <i class="ri-group-line"></i>
-            <a routerLink="/patients"><div>Patients</div></a>
+            <a routerLink="/patients">
+                <div>Patients</div>
+            </a>
         </div>
         <div class="nav-menu">
             <i class="ri-calendar-line"></i>
-            <a routerLink="/agenda"><div>Agenda</div></a>
+            <a routerLink="/agenda">
+                <div>Agenda</div>
+            </a>
         </div>
         <div class="nav-menu">
             <i class="ri-file-text-line"></i>
-            <a routerLink="/notes"><div>Dossiers médicaux</div></a>
+            <a routerLink="/notes">
+                <div>Dossiers médicaux</div>
+            </a>
         </div>
         <div class="nav-menu">
             <i class="ri-capsule-line"></i>
-            <a routerLink="/prescriptions"><div>Prescriptions</div></a>
+            <a routerLink="/prescriptions">
+                <div>Prescriptions</div>
+            </a>
         </div>
         <div class="nav-menu">
             <i class="ri-dossier-line"></i>
-            <a routerLink="/reports"><div>Rapports</div></a>
+            <a routerLink="/reports">
+                <div>Rapports</div>
+            </a>
         </div>
     </nav>
     <div class="access-nav-container">
         <div class="access-nav">
             <i class="ri-settings-line"></i>
-            <a routerLink="/settings"><div>Paramètres</div></a>
+            <a routerLink="/settings">
+                <div>Paramètres</div>
+            </a>
         </div>
         <div class="access-nav">
             <i class="ri-logout-circle-r-line"></i>
-            <a routerLink="/logout"><div>Déconnexion</div></a>
+            <a>
+                <button id="logout-btn" (click)="logout()">Déconnexion</button>
+            </a>
         </div>
     </div>
 </main>

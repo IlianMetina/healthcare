@@ -45,9 +45,22 @@ public class DoctorController {
         return ResponseEntity.ok().build();
     }
 
+    @PostMapping("/logout")
+    public ResponseEntity<String> logout(HttpServletResponse response){
+        Cookie cookie = new Cookie("jwt", null);
+        cookie.setSecure(false);
+        cookie.setPath("/");
+        cookie.setHttpOnly(true);
+        cookie.setMaxAge(0);
+
+        response.addCookie(cookie);
+        return ResponseEntity.ok("Déconnexion réussie");
+    }
+
     @GetMapping("/me")
     public ResponseEntity<DoctorResponse> getMyInfo(@AuthenticationPrincipal Jwt jwt) {
         String email = jwt.getSubject();
+        System.out.println("Email extraite : " + email);
         return ResponseEntity.ok(doctorService.getMyInfo(email));
     }
 

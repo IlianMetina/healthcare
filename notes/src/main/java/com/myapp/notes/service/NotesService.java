@@ -45,14 +45,22 @@ public class NotesService {
         return remarks;
     }
 
-    public List<String> findAllNotesByPatientId(String patientId){
-        List<Notes> patientNotes = repository.findByPatientId(patientId);
+    public List<NotesResponse> findAllNotesByPatientId(String patientId){
 
-        List<String> remarks = new ArrayList<>();
+        List<Notes> patientNotes = repository.findByPatientId(patientId);
+        List<NotesResponse> notesResponses = new ArrayList<>();
+//        List<String> remarks = new ArrayList<>();
+
         for(int i = 0; i < patientNotes.size(); i++){
-            remarks.add(patientNotes.get(i).getRemarks());
+            NotesResponse singleNote = new NotesResponse();
+            singleNote.setCreatedAt(patientNotes.get(i).getCreatedAt());
+            singleNote.setPatientId(UUID.fromString(patientNotes.get(i).getPatientId()));
+            singleNote.setRemarks(patientNotes.get(i).getRemarks());
+            singleNote.setNotesId(patientNotes.get(i).getNotesId());
+            notesResponses.add(singleNote);
+//            remarks.add(patientNotes.get(i).getRemarks());
         }
-        return remarks;
+        return notesResponses;
     }
 
     public List<Notes> findAllNotes(){

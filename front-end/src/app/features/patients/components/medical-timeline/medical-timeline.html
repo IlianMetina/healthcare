@@ -6,26 +6,29 @@
     </button>
   </div>
   <div class="timeline-list">
-    @for (record of records; track record.date + record.label; let i = $index) {
-      <div class="timeline-item">
-        <div class="timeline-line-container">
-          <div class="timeline-dot">
-            <i [class]="getIcon(record.icon)" [style.color]="getIconColor(record.icon)"></i>
-          </div>
-          @if (i < records.length - 1) {
-            <div class="timeline-connector"></div>
-          }
+    @for (note of patientNotes; track $index; let i = $index) {
+    <div class="timeline-item">
+      <div class="timeline-line-container">
+        <div class="timeline-dot">
+          <i class="ri-file-text-line" style="color: #6366f1"></i>
         </div>
-        <div class="timeline-content">
-          <div class="timeline-content-header">
-            <div>
-              <span class="timeline-type">{{ record.type }}</span>
-              <p class="timeline-label">{{ record.label }}</p>
-            </div>
-            <span class="timeline-date">{{ record.date }}</span>
-          </div>
-        </div>
+        @if (i < patientNotes.length - 1) { <div class="timeline-connector">
       </div>
-    }
+      }
+    </div>
+    <div class="timeline-content">
+      <div class="timeline-content-header">
+        <div>
+          <p class="timeline-label">{{ note }}</p>
+        </div>
+        <button id="delete-note" (click)="deleteNote()">x</button>
+      </div>
+    </div>
   </div>
+  }
+
+  @if (patientNotes.length === 0) {
+  <p style="color: #6b7280; font-size: 0.875rem;">Aucune note trouvée.</p>
+  }
+</div>
 </div>

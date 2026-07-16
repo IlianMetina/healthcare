@@ -28,4 +28,8 @@ export class AuthService {
     return this.http.post("http://localhost:8072/api/v1/users/login", data, { responseType: 'text', withCredentials: true });
   }
 
+  logout(): Observable<string> {
+    return this.http.post("http://localhost:8072/api/v1/users/logout", {}, { responseType: 'text', withCredentials: true });
+  }
+
 }

@@ -31,13 +31,13 @@
     </div>
 
     <!-- Medical records timeline -->
-    <app-medical-timeline [records]="records"></app-medical-timeline>
+    <app-medical-timeline [patientNotes]="patientNotes()" [records]="records"></app-medical-timeline>
 
   </div>
 
   <!-- Right panel: agenda + stats -->
   <div class="right-panel-wrapper">
-    <app-right-panel [appointments]="appointments"></app-right-panel>
+    <app-right-panel [appointments]="appointments" [patientsCount]="patientsCount()"></app-right-panel>
   </div>
 
 </div>

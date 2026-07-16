@@ -9,11 +9,15 @@ import { Appointment, DayStat } from '../../../../core/models/patient';
 })
 export class RightPanel {
   @Input() appointments: Appointment[] = [];
+  @Input() patientsCount: number = 0;
 
-  stats: DayStat[] = [
-    { label: 'Patients', value: '12', icon: 'ri-group-line' },
-    { label: 'Consultations', value: '6', icon: 'ri-clipboard-line' },
-    { label: 'Urgences', value: '2', icon: 'ri-alert-line' },
-    { label: 'En attente', value: '4', icon: 'ri-time-line' },
-  ];
+  get stats(): DayStat[] {
+    return [
+      { label: 'Patients', value: this.patientsCount, icon: 'ri-group-line' },
+      { label: 'Consultations', value: 6, icon: 'ri-clipboard-line' },
+      { label: 'Urgences', value: 2, icon: 'ri-alert-line' },
+      { label: 'En attente', value: 4, icon: 'ri-time-line' },
+    ];
+  }
+
 }

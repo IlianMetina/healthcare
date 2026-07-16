@@ -20,6 +20,8 @@ export class Patients {
   private authService = inject(AuthService);
   private patientService = inject(PatientService);
   private notesService = inject(NotesService);
+  patientNotes = signal<string[]>(["Aucune note"]);
+  patientsCount = signal<number>(0);
   patientsList = signal<Patient[]>([]);
   patientAssessment = signal<string>("Inconnu");
 
@@ -57,6 +59,8 @@ export class Patients {
       next: (patients) => {
         const enriched = patients.map(p => this.enrichPatient(p));
         this.patientsList.set(enriched);
+        this.patientsCount.set(enriched.length);
+        console.log(this.patientsCount());
 
         if (enriched.length > 0 && !this.selectedPatient) {
           this.selectPatient(enriched[0]);
@@ -120,6 +124,16 @@ export class Patients {
 
   selectPatient(patient: Patient): void {
     this.selectedPatient = patient;
+    this.notesService.getPatientNotes(patient.patientId).subscribe({
+      next: (notes) => {
+        if (notes && notes.length > 0) {
+          this.patientNotes.set(notes);
+        } else {
+          this.patientNotes.set([]);
+        }
+      }
+    });
+
     patient.status = 'Chargement...';
 
     this.patientService.getPatientAssessment(patient.patientId).subscribe({

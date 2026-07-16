@@ -24,13 +24,13 @@ public class NotesController {
         return service.findNotesById(notesId);
     }
 
-    @GetMapping("/{patientId}")
+    @GetMapping("/patient/active/{patientId}")
     public List<String> findAllRelevantNotesByPatientId(@PathVariable String patientId){
         return service.findAllRelevantNotesByPatientId(patientId);
     }
 
     @GetMapping("/patient/{patientId}")
-    public List<String> findAllNotesByPatientId(@PathVariable String patientId){
+    public List<NotesResponse> findAllNotesByPatientId(@PathVariable String patientId){
         return service.findAllNotesByPatientId(patientId);
     }
 

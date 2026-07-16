@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth/auth-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { AuthService } from '../../../services/auth/auth-service';
 export class Login {
 
   private authService = inject(AuthService);
+  private router = inject(Router);
 
   loginForm = new FormGroup({
     email: new FormControl("", {
@@ -42,6 +44,7 @@ export class Login {
     this.authService.connect(this.loginForm.getRawValue()).subscribe({
       next: response => {
         console.log(response);
+        this.router.navigate(['/']);
       }
     });
 

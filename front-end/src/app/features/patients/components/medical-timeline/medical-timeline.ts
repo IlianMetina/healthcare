@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { MedicalRecord } from '../../../../core/models/patient';
+import { Component, inject, Input } from '@angular/core';
+import { MedicalRecord, PatientNotes } from '../../../../core/models/patient';
+import { NotesService } from '../../../../services/notes/notes-service';
 
 @Component({
   selector: 'app-medical-timeline',
@@ -9,6 +10,8 @@ import { MedicalRecord } from '../../../../core/models/patient';
 })
 export class MedicalTimeline {
   @Input() records: MedicalRecord[] = [];
+  @Input() patientNotes: string[] = [];
+  private notesService = inject(NotesService);
 
   iconMap: Record<string, string> = {
     pill: 'ri-capsule-line',
@@ -26,5 +29,9 @@ export class MedicalTimeline {
     if (iconKey === 'alert') return '#ef4444';
     if (iconKey === 'check') return '#0d9488';
     return '#6b7a96';
+  }
+
+  deleteNote() {
+
   }
 }

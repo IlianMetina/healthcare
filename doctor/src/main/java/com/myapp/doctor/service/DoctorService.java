@@ -14,17 +14,16 @@ public class DoctorService {
 
     private final DoctorRepository repository;
     private final PasswordEncoder passwordEncoder;
-    private final JwtService jwtService;
 
-    public DoctorService(DoctorRepository repository, PasswordEncoder passwordEncoder, JwtService jwtService) {
+    public DoctorService(DoctorRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
         this.passwordEncoder = passwordEncoder;
-        this.jwtService = jwtService;
     }
 
     public DoctorResponse getMyInfo(String email){
 
         Doctor doctor = repository.findDoctorByEmail(email).orElseThrow(() -> new RuntimeException("Doctor not found"));
+        System.out.println(doctor.getLastName() + " " + doctor.getFirstName());
         DoctorResponse doctorResponse = new DoctorResponse();
         doctorResponse.setFirstName(doctor.getFirstName());
         doctorResponse.setLastName(doctor.getLastName());
@@ -40,6 +39,8 @@ public class DoctorService {
 
         Doctor doctor = new Doctor();
         doctor.setRole(UserRoles.DOCTOR);
+        doctor.setFirstName(dto.getFirstName());
+        doctor.setLastName(dto.getLastName());
         doctor.setEmail(dto.getEmail());
         doctor.setHashedPassword(passwordEncoder.encode(dto.getPassword()));
 
