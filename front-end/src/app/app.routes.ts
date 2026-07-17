@@ -5,12 +5,12 @@ import { Notes } from './features/notes/notes';
 import { Layout } from './shared/components/layout/layout';
 import { Login } from './features/auth/login/login';
 import { About } from './features/about/about';
-// import { Register } from './features/auth/register/register';
+import { authGuard } from './services/auth/auth-guard';
 
 export const routes: Routes = [
     { path: "login", component: Login },
     {
-        path: '', component: Layout, children: [
+        path: '', component: Layout, canActivate: [authGuard], children: [
             { path: '', component: Home },
             { path: 'patients', component: Patients },
             { path: 'notes', component: Notes },

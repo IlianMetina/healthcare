@@ -31,7 +31,7 @@ public class DoctorController {
     // @GetMapping("")
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody UserLoginRequest dto, HttpServletResponse response) {
+    public ResponseEntity<String> login(@Valid @RequestBody UserLoginRequest dto, HttpServletResponse response) {
         String token = authService.login(dto);
 
         Cookie cookie = new Cookie("jwt", token);

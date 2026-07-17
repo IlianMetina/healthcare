@@ -1,7 +1,6 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, inject, Input, Output, EventEmitter } from '@angular/core';
 import { MedicalRecord, NotesResponse, PatientNotes } from '../../../../core/models/patient';
 import { NotesService } from '../../../../services/notes/notes-service';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-medical-timeline',
@@ -12,11 +11,18 @@ import { DatePipe } from '@angular/common';
 export class MedicalTimeline {
   @Input() records: MedicalRecord[] = [];
   @Input() patientNotes: NotesResponse[] = [];
-  @Output() noteDeleted = new EventEmitter();
-
   private notesService = inject(NotesService);
-  private datePipe = inject(DatePipe);
 
+  @Output() noteDeleted = new EventEmitter<void>();
+
+  formatDate(date: string | Date): string {
+    if (!date) return '';
+    return new Date(date).toLocaleDateString('fr-FR', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  }
   iconMap: Record<string, string> = {
     pill: 'ri-capsule-line',
     check: 'ri-checkbox-circle-line',
@@ -39,14 +45,11 @@ export class MedicalTimeline {
     this.notesService.deleteNote(notesId).subscribe({
       next: () => {
         console.log("Note successfully deleted");
+        this.noteDeleted.emit();
       },
       error: (err) => {
         console.error(err);
       }
     });
-  }
-
-  formatDate(dateString: string): string | null {
-    return this.datePipe.transform(dateString, 'dd MMM yyyy');
   }
 }

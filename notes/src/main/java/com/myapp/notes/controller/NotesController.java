@@ -5,6 +5,7 @@ import com.myapp.notes.dto.NotesResponse;
 import com.myapp.notes.dto.UpdateNotesRequest;
 import com.myapp.notes.model.Notes;
 import com.myapp.notes.service.NotesService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,7 +41,7 @@ public class NotesController {
     }
 
     @PostMapping("/create")
-    public NotesResponse createNotes(@RequestBody CreateNotesRequest dto){
+    public NotesResponse createNotes(@Valid @RequestBody CreateNotesRequest dto){
 
         System.out.println("Notes récupérées :");
         System.out.println(dto.getRemarks());
@@ -48,7 +49,7 @@ public class NotesController {
     }
 
     @PutMapping("/update/{notesId}")
-    public NotesResponse updateNotes(@PathVariable String notesId, @RequestBody UpdateNotesRequest dto){
+    public NotesResponse updateNotes(@PathVariable String notesId, @Valid @RequestBody UpdateNotesRequest dto){
         return service.updateNotes(notesId, dto);
     }
 

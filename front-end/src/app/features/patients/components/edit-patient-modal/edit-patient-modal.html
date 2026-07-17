@@ -1,0 +1,72 @@
+<div class="modal-backdrop" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Modifier le dossier patient</h2>
+      <button class="close-btn" (click)="closeModal()">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="modal-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">Prénom</label>
+          <input type="text" id="firstName" formControlName="firstName">
+          @if (editForm.controls.firstName.invalid && editForm.controls.firstName.touched) {
+            <span class="field-error">Ce champ est obligatoire</span>
+          }
+        </div>
+        <div class="form-group">
+          <label for="lastName">Nom</label>
+          <input type="text" id="lastName" formControlName="lastName">
+          @if (editForm.controls.lastName.invalid && editForm.controls.lastName.touched) {
+            <span class="field-error">Ce champ est obligatoire</span>
+          }
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="birthDate">Date de naissance</label>
+          <input type="date" id="birthDate" formControlName="birthDate">
+          @if (editForm.controls.birthDate.invalid && editForm.controls.birthDate.touched) {
+            <span class="field-error">Ce champ est obligatoire</span>
+          }
+        </div>
+        <div class="form-group">
+          <label for="gender">Sexe</label>
+          <select id="gender" formControlName="gender">
+            <option value="M">Homme</option>
+            <option value="F">Femme</option>
+          </select>
+          @if (editForm.controls.gender.invalid && editForm.controls.gender.touched) {
+            <span class="field-error">Ce champ est obligatoire</span>
+          }
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Adresse</label>
+        <input type="text" id="address" formControlName="address">
+        @if (editForm.controls.address.invalid && editForm.controls.address.touched) {
+          <span class="field-error">Ce champ est obligatoire</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">Téléphone</label>
+        <input type="tel" id="phoneNumber" formControlName="phoneNumber">
+        @if (editForm.controls.phoneNumber.invalid && editForm.controls.phoneNumber.touched) {
+          <span class="field-error">Ce champ est obligatoire</span>
+        }
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary" (click)="closeModal()">Annuler</button>
+        <button type="submit" class="btn-primary" [disabled]="editForm.invalid || isSubmitting">
+          {{ isSubmitting ? 'Enregistrement...' : 'Enregistrer' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
