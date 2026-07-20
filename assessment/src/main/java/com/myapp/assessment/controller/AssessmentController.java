@@ -19,7 +19,13 @@ public class AssessmentController {
 
     @GetMapping("/patient/{patientId}")
     public RisksTerms getRisks(@PathVariable String patientId){
-        return service.calculateRisks(patientId);
+        try {
+            return service.calculateRisks(patientId);
+        } catch (RuntimeException e) {
+            System.err.println("=== CONTROLLER EXCEPTION HANDLER ===");
+            System.err.println("Returning UNAVAILABLE due to: " + e.getMessage());
+            return RisksTerms.UNAVAILABLE;
+        }
     }
 
     @GetMapping("/test")

@@ -6,6 +6,8 @@ import com.myapp.assessment.dto.NotesResponse;
 import com.myapp.assessment.dto.PatientResponse;
 import com.myapp.assessment.enums.RisksTerms;
 import com.myapp.assessment.enums.TriggerTerms;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -17,16 +19,24 @@ public class AssessmentService {
 
     private final PatientClient patientClient;
     private final NotesClient notesClient;
+    private AssessmentService self;
+
+    public static final String PATIENT_SERVICE = "patientDetailsService";
 
     public AssessmentService(PatientClient patientClient, NotesClient notesClient){
         this.patientClient = patientClient;
         this.notesClient = notesClient;
     }
 
+    @org.springframework.beans.factory.annotation.Autowired
+    public void setSelf(@org.springframework.context.annotation.Lazy AssessmentService self) {
+        this.self = self;
+    }
+
     public RisksTerms calculateRisks(String patientId){
 
-        PatientResponse patient = patientClient.findPatientById(patientId);
-        List<NotesResponse> notes = notesClient.findAllNotesByPatientId(patientId);
+        PatientResponse patient = self.getPatientWithResilience(patientId);
+        List<NotesResponse> notes = self.getNotesWithResilience(patientId);
 
         int patientAge = Period.between(patient.getBirthDate(), LocalDate.now()).getYears();
         TriggerTerms[] terms = TriggerTerms.values();
@@ -73,4 +83,33 @@ public class AssessmentService {
 
         return RisksTerms.NONE;
     }
+
+    @Retry(name = "retryForPatientDetails")
+    @CircuitBreaker(name = PATIENT_SERVICE, fallbackMethod = "getPatientFallback")
+    public PatientResponse getPatientWithResilience(String patientId){
+        return patientClient.findPatientById(patientId);
+    }
+
+    @Retry(name = "retryForPatientDetails")
+    @CircuitBreaker(name = PATIENT_SERVICE, fallbackMethod = "getNotesFallback")
+    public List<NotesResponse> getNotesWithResilience(String patientId){
+        return notesClient.findAllNotesByPatientId(patientId);
+    }
+
+    private PatientResponse getPatientFallback(String patientId, Throwable throwable){
+        System.err.println("=== PATIENT FALLBACK ACTIVÉ ===");
+        System.err.println("Patient ID: " + patientId);
+        System.err.println("Type d'erreur: " + throwable.getClass().getName());
+        System.err.println("Message: " + throwable.getMessage());
+        throw new RuntimeException("Patient service unavailable", throwable);
+    }
+
+    private List<NotesResponse> getNotesFallback(String patientId, Throwable throwable){
+        System.err.println("=== NOTES FALLBACK ACTIVÉ ===");
+        System.err.println("Patient ID: " + patientId);
+        System.err.println("Type d'erreur: " + throwable.getClass().getName());
+        System.err.println("Message: " + throwable.getMessage());
+        throw new RuntimeException("Notes service unavailable", throwable);
+    }
+
 }

@@ -1,0 +1,845 @@
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
+{
+  "server.port": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:2:9"
+  },
+  "eureka.instance.hostname": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:5:15"
+  },
+  "eureka.client.serviceUrl.defaultZone": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:8:20"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slidingWindowSize": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:14:28"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.minimumNumberOfCalls": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:15:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.failureRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:16:31"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.waitDurationInOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:17:34"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.permittedNumberOfCallsInHalfOpenState": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:18:48"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallDurationThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:19:36"
+  },
+  "resilience4j.circuitbreaker.instances.patientDetailsService.slowCallRateThreshold": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:20:32"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.maxAttempts": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:25:22"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.waitDuration": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:26:23"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.enableExponentialBackoff": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:27:35"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.exponentialBackoffMultiplier": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:28:39"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[0]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:30:13"
+  },
+  "resilience4j.retry.instances.retryForPatientDetails.retryExceptions[1]": {
+    "value": "******",
+    "origin": "Config Server git@github.com:IlianMetina/healthcare-config.git/assessment.yml:31:13"
+  }
+}
