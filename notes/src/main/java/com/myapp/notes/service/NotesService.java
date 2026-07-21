@@ -49,7 +49,6 @@ public class NotesService {
 
         List<Notes> patientNotes = repository.findByPatientId(patientId);
         List<NotesResponse> notesResponses = new ArrayList<>();
-//        List<String> remarks = new ArrayList<>();
 
         for(int i = 0; i < patientNotes.size(); i++){
             NotesResponse singleNote = new NotesResponse();
@@ -58,7 +57,6 @@ public class NotesService {
             singleNote.setRemarks(patientNotes.get(i).getRemarks());
             singleNote.setNotesId(patientNotes.get(i).getNotesId());
             notesResponses.add(singleNote);
-//            remarks.add(patientNotes.get(i).getRemarks());
         }
         return notesResponses;
     }
@@ -77,7 +75,7 @@ public class NotesService {
         Notes createdNotes = repository.save(notes);
 
         NotesResponse notesResponse = new NotesResponse();
-        notesResponse.setCreatedAt(LocalDateTime.now());
+        notesResponse.setCreatedAt(createdNotes.getCreatedAt());
         notesResponse.setPatientId(UUID.fromString(createdNotes.getPatientId()));
         notesResponse.setRemarks(createdNotes.getRemarks());
         notesResponse.setNotesId(createdNotes.getNotesId());
