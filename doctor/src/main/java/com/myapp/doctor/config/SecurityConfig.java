@@ -25,8 +25,7 @@ public class SecurityConfig {
     @Value("${jwt.secret}")
     private String jwtSecret;
 
-    public SecurityConfig() {
-    }
+    public SecurityConfig() {}
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -50,13 +49,6 @@ public class SecurityConfig {
 
         return NimbusJwtDecoder.withSecretKey(secretKey).build();
     }
-
-    // @Bean
-    // public UserDetailsService userDetailsService(DoctorRepository
-    // doctorRepository){
-    // return email -> doctorRepository.findDoctorByEmail(email).orElseThrow(() ->
-    // new UsernameNotFoundException("Email not found"));
-    // }
 
     @Bean
     public PasswordEncoder passwordEncoder() {

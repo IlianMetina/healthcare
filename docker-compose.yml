@@ -1,0 +1,73 @@
+services:
+  doctor_db:
+    restart: always
+    image: postgres
+    container_name: healthcare-postgres-doctor
+    environment:
+      POSTGRES: db_doctor
+      POSTGRES_ROOT_PASSWORD: root
+      POSTGRES_USER: db_doctor_admin
+      POSTGRES_PASSWORD: password
+    ports:
+      - '5433:5432'
+    volumes:
+      - doctor_db:/var/postgresql
+    networks:
+      - healthcare-network
+    healthcheck:
+      test: ["CMD", "ping", "-h", "localhost", "-u", "proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  notes_db:
+    restart: always
+    image: mongo
+    container_name: healthcare-postgres-patient
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: db_patient
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - '27018:27017'
+    volumes:
+      - ./mongodb:/data/db
+    networks:
+      - healthcare-network
+    healthcheck:
+      test: [ "CMD", "mongo", "--eval", "'db.adminCommand('ping')'" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  config-server:
+    image: valjeanjean/config-server:latest
+    container_name: health-care-config-server
+    ports:
+      - "8888:8888"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8888/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  discovery:
+    image: valjeanjean/discovery:latest
+    container_name: health-care-discovery
+    ports:
+      - "8761:8761"
+    depends_on:
+      config-server:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8761/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  doctor_db:
+  patient_db:
+
+networks:
+  healthcare-network:
+    driver: bridge

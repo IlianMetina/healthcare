@@ -32,12 +32,11 @@ public class AuthService {
         // userInfos.setEmail(dto.getEmail());
         // userInfos.setRole(doctor.getRole());
 
-        String token = jwtService.generateToken(doctor);
+        return jwtService.generateToken(doctor);
 
         // DoctorLoginResponse response = new DoctorLoginResponse();
         // response.setAccessToken(token);
         // response.setUser(userInfos);
 
-        return token;
     }
 }

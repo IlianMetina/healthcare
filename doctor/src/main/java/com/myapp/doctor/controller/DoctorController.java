@@ -4,7 +4,6 @@ import com.myapp.doctor.dto.DoctorCreateRequest;
 import com.myapp.doctor.dto.DoctorCreateResponse;
 import com.myapp.doctor.dto.DoctorResponse;
 import com.myapp.doctor.dto.UserLoginRequest;
-import com.myapp.doctor.model.Doctor;
 import com.myapp.doctor.service.AuthService;
 import com.myapp.doctor.service.DoctorService;
 import jakarta.servlet.http.Cookie;
